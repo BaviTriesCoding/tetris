@@ -1,6 +1,6 @@
 #include "library.h"
 int main() {
-    initscr();
+    /*initscr();
     start_color();
     use_default_colors();
     noecho();
@@ -10,7 +10,7 @@ int main() {
     box(cornice, 0, 0);
     wrefresh(cornice);
     keypad(screen, true);
-    I_Piece start_tetramin = I_Piece(screen, 2);
+    Tetramin start_tetramin = O_Piece(screen, 2);
     start_tetramin.show();
     int inputChar;
     do{
@@ -18,6 +18,7 @@ int main() {
         start_tetramin.evalMove(inputChar);
     }while(inputChar!='p');
     wgetch(screen);
-    endwin();
+    endwin();*/
+
     return 0;
 }

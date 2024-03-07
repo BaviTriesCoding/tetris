@@ -11,6 +11,8 @@ add_executable(tetris main.cpp
         Tetramin/Tetramin.cpp
         Tetramin/Tetramin.hpp
         Tetramin/I_Piece.cpp
-        Tetramin/I_Piece.hpp)
+        Tetramin/I_Piece.hpp
+        Tetramin/O_Piece.cpp
+        Tetramin/O_Piece.hpp)
 
 target_link_libraries(tetris ${CURSES_LIBRARIES})

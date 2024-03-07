@@ -73,6 +73,12 @@ build CMakeFiles/tetris.dir/Tetramin/I_Piece.cpp.o: CXX_COMPILER__tetris_unscann
   OBJECT_DIR = CMakeFiles/tetris.dir
   OBJECT_FILE_DIR = CMakeFiles/tetris.dir/Tetramin
 
+build CMakeFiles/tetris.dir/Tetramin/O_Piece.cpp.o: CXX_COMPILER__tetris_unscanned_Debug /home/riccardo/CLionProjects/tetris/Tetramin/O_Piece.cpp || cmake_object_order_depends_target_tetris
+  DEP_FILE = CMakeFiles/tetris.dir/Tetramin/O_Piece.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/tetris.dir
+  OBJECT_FILE_DIR = CMakeFiles/tetris.dir/Tetramin
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target tetris
@@ -81,7 +87,7 @@ build CMakeFiles/tetris.dir/Tetramin/I_Piece.cpp.o: CXX_COMPILER__tetris_unscann
 #############################################
 # Link the executable tetris
 
-build tetris: CXX_EXECUTABLE_LINKER__tetris_Debug CMakeFiles/tetris.dir/main.cpp.o CMakeFiles/tetris.dir/library.cpp.o CMakeFiles/tetris.dir/Tetramin/Tetramin.cpp.o CMakeFiles/tetris.dir/Tetramin/I_Piece.cpp.o | /usr/lib/x86_64-linux-gnu/libcurses.so /usr/lib/x86_64-linux-gnu/libform.so
+build tetris: CXX_EXECUTABLE_LINKER__tetris_Debug CMakeFiles/tetris.dir/main.cpp.o CMakeFiles/tetris.dir/library.cpp.o CMakeFiles/tetris.dir/Tetramin/Tetramin.cpp.o CMakeFiles/tetris.dir/Tetramin/I_Piece.cpp.o CMakeFiles/tetris.dir/Tetramin/O_Piece.cpp.o | /usr/lib/x86_64-linux-gnu/libcurses.so /usr/lib/x86_64-linux-gnu/libform.so
   FLAGS = -g
   LINK_LIBRARIES = -lcurses  /usr/lib/x86_64-linux-gnu/libform.so
   OBJECT_DIR = CMakeFiles/tetris.dir
