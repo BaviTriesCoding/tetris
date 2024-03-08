@@ -6,6 +6,7 @@
 
 Tetramin::Tetramin(WINDOW* _screen, short _rotation, short _color) {
     this->rotation = _rotation % 4;
+    this->originalRotation = this->rotation;
     init_pair(_color, _color, _color);
     this->color = COLOR_PAIR(_color);
     this->screen = _screen;

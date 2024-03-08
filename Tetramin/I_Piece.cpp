@@ -4,7 +4,7 @@
 
 #include "I_Piece.hpp"
 
-I_Piece::I_Piece(WINDOW* _screen, short _rotation, short _color): Tetramin(_screen, _rotation, _color){
+I_Piece::I_Piece(WINDOW* _screen, int yStart, int xStart, short _rotation, short _color): Tetramin(_screen, _rotation, _color){
 
     //questa matrice serve a ruotare il pezzo nella posizione di default
     // tutti i valori sono quanto bisogna sommare alle coordinate di un pezzo per portarlo nella nuova posizione dopo la rotazione
@@ -57,52 +57,52 @@ I_Piece::I_Piece(WINDOW* _screen, short _rotation, short _color): Tetramin(_scre
 
 
     if(this->rotation == 0){
-        this->blocks[0].y = -1;
-        this->blocks[0].x = 3;
+        this->blocks[0].y = yStart + 1;
+        this->blocks[0].x = xStart - 2;
 
-        this->blocks[1].y = -1;
-        this->blocks[1].x = 4;
+        this->blocks[1].y = yStart + 1;
+        this->blocks[1].x = xStart - 1;
 
-        this->blocks[2].y = -1;
-        this->blocks[2].x = 5;
+        this->blocks[2].y = yStart + 1;
+        this->blocks[2].x = xStart;
 
-        this->blocks[3].y = -1;
-        this->blocks[3].x = 6;
+        this->blocks[3].y = yStart + 1;
+        this->blocks[3].x = xStart + 1;
     }else if(this->rotation == 1){
-        this->blocks[0].y = -2;
-        this->blocks[0].x = 4;
+        this->blocks[0].y = yStart;
+        this->blocks[0].x = xStart - 1;
 
-        this->blocks[1].y = -1;
-        this->blocks[1].x = 4;
+        this->blocks[1].y = yStart + 1;
+        this->blocks[1].x = xStart - 1;
 
-        this->blocks[2].y = 0;
-        this->blocks[2].x = 4;
+        this->blocks[2].y = yStart + 2;
+        this->blocks[2].x = xStart - 1;
 
-        this->blocks[3].y = 1;
-        this->blocks[3].x = 4;
+        this->blocks[3].y = yStart + 3;
+        this->blocks[3].x = xStart - 1;
     }else if(this->rotation == 2){
-        this->blocks[0].y = 0;
-        this->blocks[0].x = 6;
+        this->blocks[0].y = yStart + 2;
+        this->blocks[0].x = xStart + 1;
 
-        this->blocks[1].y = 0;
-        this->blocks[1].x = 5;
+        this->blocks[1].y = yStart + 2;
+        this->blocks[1].x = xStart;
 
-        this->blocks[2].y = 0;
-        this->blocks[2].x = 4;
+        this->blocks[2].y = yStart + 2;
+        this->blocks[2].x = xStart - 1;
 
-        this->blocks[3].y = 0;
-        this->blocks[3].x = 3   ;
+        this->blocks[3].y = yStart + 2;
+        this->blocks[3].x = xStart - 2   ;
     }else if(this->rotation == 3){
-        this->blocks[0].y = 1;
-        this->blocks[0].x = 3;
+        this->blocks[0].y = yStart + 3;
+        this->blocks[0].x = xStart - 2;
 
-        this->blocks[1].y = 0;
-        this->blocks[1].x = 3;
+        this->blocks[1].y = yStart + 2;
+        this->blocks[1].x = xStart - 2;
 
-        this->blocks[2].y = -1;
-        this->blocks[2].x = 3;
+        this->blocks[2].y = yStart + 1;
+        this->blocks[2].x = xStart - 2;
 
-        this->blocks[3].y = -2;
-        this->blocks[3].x = 3;
+        this->blocks[3].y = yStart;
+        this->blocks[3].x = xStart - 2;
     }
 };

@@ -13,13 +13,14 @@ struct coordinates{
 
 class Tetramin {
 protected:
-    coordinates blocks[4];
     short rotation;
-    short color;
     WINDOW* screen;
     int defaultRotation[8][4][2];
     int stageRotation[8][5][2];
 public:
+    coordinates blocks[4];
+    short color;
+    short originalRotation;
     Tetramin(WINDOW* _screen, short _rotation, short _color);
     //1 = rosso
     //12 = blu
