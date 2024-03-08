@@ -7,7 +7,6 @@
 #include <ncurses.h>
 #include <iostream>
 #include <cmath>
-#include "Tetramin/Tetramin.hpp"
 using namespace std;
 
 int sign(int _n);
