@@ -18,6 +18,7 @@ protected:
     short color;
     WINDOW* screen;
     int defaultRotation[8][4][2];
+    int stageRotation[8][5][2];
 public:
     Tetramin(WINDOW* _screen, short _rotation, short _color);
     //1 = rosso
@@ -30,25 +31,9 @@ public:
     void clear();
     bool canGoDirection(int _direction);
     void goDirection(int _direction);
-    virtual int whatToAdd(bool _clockwise, int _startingRotation, int _testNumber, bool _x);
-    virtual int canRotate(bool _clockwise);
-    virtual void rotate(bool _clockwise, int _stage);
+    void hardDrop();
+    int canRotate(bool _clockwise);
+    void rotate(bool _clockwise, int _stage);
     bool evalMove(int _moveCode); //returns true if a move has been done, false otherwise;
-};
-
-class I_Piece: public Tetramin{
-public:
-    I_Piece(WINDOW* _screen, short _rotation, short _color = 6);
-    int whatToAdd(bool _clockwise, int _startingRotation, int _testNumber, bool _x) override;
-    int canRotate(bool _clockwise) override;
-    void rotate(bool _clockwise, int _stage) override;
-};
-
-class O_Piece: public Tetramin{
-public:
-    O_Piece(WINDOW* _screen, short _rotation, short _color = 14);
-    int whatToAdd(bool _clockwise, int _startingRotation, int _testNumber, bool _x) override;
-    int canRotate(bool _clockwise) override;
-    void rotate(bool _clockwise, int _stage) override;
 };
 #endif //RANDOM_TESTS_TETRAMIN_HPP

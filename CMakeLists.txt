@@ -13,6 +13,16 @@ add_executable(tetris main.cpp
         Tetramin/I_Piece.cpp
         Tetramin/I_Piece.hpp
         Tetramin/O_Piece.cpp
-        Tetramin/O_Piece.hpp)
+        Tetramin/O_Piece.hpp
+        Tetramin/L_Piece.cpp
+        Tetramin/L_Piece.hpp
+        Tetramin/J_Piece.cpp
+        Tetramin/J_Piece.hpp
+        Tetramin/T_Piece.cpp
+        Tetramin/T_Piece.hpp
+        Tetramin/S_Piece.cpp
+        Tetramin/S_Piece.hpp
+        Tetramin/Z_Piece.cpp
+        Tetramin/Z_Piece.hpp)
 
 target_link_libraries(tetris ${CURSES_LIBRARIES})

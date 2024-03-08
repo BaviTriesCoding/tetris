@@ -7,6 +7,9 @@
 
 #include "Tetramin.hpp"
 
-
+class I_Piece: public Tetramin{
+public:
+    I_Piece(WINDOW* _screen, short _rotation, short _color = 6);
+};
 
 #endif //FALLING_BLOCK_I_PIECE_HPP
