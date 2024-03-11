@@ -1,12 +1,5 @@
 #include "library.h"
-#include "Tetramin/Tetramin.hpp"
-#include "Tetramin/I_Piece.hpp"
-#include "Tetramin/O_Piece.hpp"
-#include "Tetramin/L_Piece.hpp"
-#include "Tetramin/J_Piece.hpp"
-#include "Tetramin/T_Piece.hpp"
-#include "Tetramin/S_Piece.hpp"
-#include "Tetramin/Z_Piece.hpp"
+#include "TetrisGame/TetrisGame.hpp"
 int main() {
     initscr();
     start_color();
@@ -20,7 +13,7 @@ int main() {
     wborder(cornice, borderch, borderch, '_', ' ', '_', '_', ' ', ' ');
     wrefresh(cornice);
     keypad(screen, true);
-    Tetramin start_tetramin = L_Piece(screen, 0);
+    Tetramin start_tetramin = O_Piece(screen, -2, 5, 0);
     start_tetramin.show();
     int inputChar;
     do{
