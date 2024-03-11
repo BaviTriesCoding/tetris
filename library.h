@@ -18,5 +18,4 @@
 using namespace std;
 
 int sign(int _n);
-Tetramin* pairTetramin(int _code, int _yStart, int _xStart);
 #endif //RANDOM_TESTS_LIBRARY_H
