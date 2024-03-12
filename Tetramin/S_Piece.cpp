@@ -47,7 +47,7 @@ S_Piece::S_Piece(WINDOW *_screen, int yStart, int xStart, short _rotation, short
         this->blocks[2].y = yStart + 1;
         this->blocks[2].x = xStart + 1;
 
-        this->blocks[3].y = -0;
+        this->blocks[3].y = yStart + 2;
         this->blocks[3].x = xStart + 1;
 
     }else if(this->rotation == 2){

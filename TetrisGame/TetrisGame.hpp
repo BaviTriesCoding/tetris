@@ -12,6 +12,8 @@ protected:
     GameScreen *main, *hold, *next[3];
     bool gameIsOver;
     bool canHold;
+    int acceptedInput[17];
+    int milliseconds;
 public:
     TetrisGame(WINDOW* _mainScreen);
     int play();
@@ -19,6 +21,8 @@ public:
     void nextTetramin();
     void holdTetramin();
     void placeTetramin();
+    int getSafeInput();
+    bool evalInput(int _input);
 };
 
 

@@ -6,7 +6,6 @@
 
 Tetramin::Tetramin(WINDOW* _screen, short _rotation, short _color) {
     this->rotation = _rotation % 4;
-    this->originalRotation = this->rotation;
     init_pair(_color, _color, _color);
     this->color = COLOR_PAIR(_color);
     this->screen = _screen;
@@ -35,6 +34,7 @@ Tetramin::Tetramin(WINDOW* _screen, short _rotation, short _color) {
         this->blocks[i].y = 0;
         this->blocks[i].x = 0;
     }
+
 }
 
 void Tetramin::show() {
@@ -46,6 +46,7 @@ void Tetramin::show() {
             mvwaddch(this->screen, this->blocks[i].y, this->blocks[i].x * 2 + 1, right);
         }
     }
+    wrefresh(this->screen);
 }
 void Tetramin::clear() {
     for(int i=0; i<4; i++){
@@ -53,51 +54,7 @@ void Tetramin::clear() {
             mvwprintw(this->screen, this->blocks[i].y, this->blocks[i].x * 2, "  ");
         }
     }
-}
-
-bool Tetramin::evalMove(int _moveCode) {
-    //_moveCode = {KEY_DOWN: goDown()} | {ARROW_LEFT: goLeft()} | {ARROW_RIGHT: goRight()} | {ARROW_UP: rotateClockwise()}
-    bool madeAMove = false;
-    int code;
-    switch (_moveCode) {
-        case KEY_DOWN:
-            if(this->canGoDirection(0)) {
-                this->goDirection(0);
-                madeAMove = true;
-            }
-            break;
-        case KEY_RIGHT:
-            if(this->canGoDirection(1)){
-                this->goDirection(1);
-                madeAMove = true;
-            }
-            break;
-        case KEY_LEFT:
-            if(this->canGoDirection(-1)){
-                this->goDirection(-1);
-                madeAMove = true;
-            }
-            break;
-        case KEY_UP:
-            code = this->canRotate(true);
-            if(code!=-1){
-                this->rotate(true, code);
-                madeAMove = true;
-            }
-            break;
-        case 'q':
-        case 'Q':
-            code = this->canRotate(false);
-
-            if(code!=-1){
-                this->rotate(false, code);
-                madeAMove = true;
-            }
-            break;
-        case ' ':
-            this->hardDrop();
-    }
-    return madeAMove;
+    wrefresh(this->screen);
 }
 
 bool Tetramin::canGoDirection(int _direction) { // | -1 = left | 0 = down | 1 = right | //
@@ -120,16 +77,12 @@ bool Tetramin::canGoDirection(int _direction) { // | -1 = left | 0 = down | 1 = 
 
 void Tetramin::goDirection(int _direction) { // | -1 = left | 0 = down | 1 = right | //
     if(_direction < -1 || _direction > 1){return;}
-    int y, x;
     this->clear();
     for(int i=0; i<4; i++){
-        y = this->blocks[i].y;
-        x = this->blocks[i].x;
         this->blocks[i].y = this->blocks[i].y + (_direction + 1)%2;
         this->blocks[i].x = this->blocks[i].x + _direction;
     }
     this->show();
-    wrefresh(this->screen);
 }
 
 int Tetramin::canRotate(bool _clockwise) {

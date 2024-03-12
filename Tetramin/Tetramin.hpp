@@ -2,8 +2,8 @@
 // Created by riccardo on 28/02/24.
 //
 
-#ifndef RANDOM_TESTS_TETRAMIN_HPP
-#define RANDOM_TESTS_TETRAMIN_HPP
+#ifndef TETRIS_TETRAMIN_HPP
+#define TETRIS_TETRAMIN_HPP
 #include "../library.h"
 
 struct coordinates{
@@ -20,14 +20,7 @@ protected:
 public:
     coordinates blocks[4];
     short color;
-    short originalRotation;
     Tetramin(WINDOW* _screen, short _rotation, short _color);
-    //1 = rosso
-    //12 = blu
-    //5 = viola
-    //6 = azzurro
-    //10 = verde (non convincente, se ne trovo uno migliore lo cambio)
-    //11 = giallo
     void show();
     void clear();
     bool canGoDirection(int _direction);
@@ -35,6 +28,5 @@ public:
     void hardDrop();
     int canRotate(bool _clockwise);
     void rotate(bool _clockwise, int _stage);
-    bool evalMove(int _moveCode); //returns true if a move has been done, false otherwise;
 };
-#endif //RANDOM_TESTS_TETRAMIN_HPP
+#endif //TETRIS_TETRAMIN_HPP

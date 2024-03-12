@@ -4,7 +4,13 @@
 
 #ifndef TETRIS_GAMESCREEN_HPP
 #define TETRIS_GAMESCREEN_HPP
-#include "../library.h"
+#include "../Tetramin/I_Piece.hpp"
+#include "../Tetramin/O_Piece.hpp"
+#include "../Tetramin/L_Piece.hpp"
+#include "../Tetramin/J_Piece.hpp"
+#include "../Tetramin/T_Piece.hpp"
+#include "../Tetramin/S_Piece.hpp"
+#include "../Tetramin/Z_Piece.hpp"
 
 class GameScreen {
 protected:
@@ -12,11 +18,13 @@ protected:
     int rows;
     int yStart;
     int xStart;
+    int yTetraStart;
+    int xTetraStart;
 public:
     WINDOW* current_screen;
     Tetramin* current_tetramin;
     int current_tetramin_code;
-    GameScreen(WINDOW* _mainScreen, int _nLines, int _nColumns, int _yStart, int _xStart);
+    GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int _yTetraStart, int _xTetraStart);
     void clear();
     void pairTetramin(int _code);
 };
