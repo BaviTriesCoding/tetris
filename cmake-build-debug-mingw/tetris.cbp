@@ -140,6 +140,12 @@
 		<Unit filename="C:/Users/jonas/CLionProjects/tetris/TetrisGame/MenuScreen.hpp">
 			<Option target="tetris"/>
 		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris/TetrisGame/ScoreScreen.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris/TetrisGame/ScoreScreen.hpp">
+			<Option target="tetris"/>
+		</Unit>
 		<Unit filename="C:/Users/jonas/CLionProjects/tetris/TetrisGame/TetrisGame.cpp">
 			<Option target="tetris"/>
 		</Unit>

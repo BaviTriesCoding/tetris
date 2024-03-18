@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/jonas/CLionProjects/tetris/Tetramin/Z_Piece.cpp" "CMakeFiles/tetris.dir/Tetramin/Z_Piece.cpp.obj" "gcc" "CMakeFiles/tetris.dir/Tetramin/Z_Piece.cpp.obj.d"
   "C:/Users/jonas/CLionProjects/tetris/TetrisGame/GameScreen.cpp" "CMakeFiles/tetris.dir/TetrisGame/GameScreen.cpp.obj" "gcc" "CMakeFiles/tetris.dir/TetrisGame/GameScreen.cpp.obj.d"
   "C:/Users/jonas/CLionProjects/tetris/TetrisGame/MenuScreen.cpp" "CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj" "gcc" "CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj.d"
+  "C:/Users/jonas/CLionProjects/tetris/TetrisGame/ScoreScreen.cpp" "CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj" "gcc" "CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj.d"
   "C:/Users/jonas/CLionProjects/tetris/TetrisGame/TetrisGame.cpp" "CMakeFiles/tetris.dir/TetrisGame/TetrisGame.cpp.obj" "gcc" "CMakeFiles/tetris.dir/TetrisGame/TetrisGame.cpp.obj.d"
   "C:/Users/jonas/CLionProjects/tetris/library.cpp" "CMakeFiles/tetris.dir/library.cpp.obj" "gcc" "CMakeFiles/tetris.dir/library.cpp.obj.d"
   "C:/Users/jonas/CLionProjects/tetris/main.cpp" "CMakeFiles/tetris.dir/main.cpp.obj" "gcc" "CMakeFiles/tetris.dir/main.cpp.obj.d"

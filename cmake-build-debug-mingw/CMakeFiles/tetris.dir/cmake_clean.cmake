@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tetris.dir/TetrisGame/GameScreen.cpp.obj.d"
   "CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj"
   "CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj.d"
+  "CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj"
+  "CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj.d"
   "CMakeFiles/tetris.dir/TetrisGame/TetrisGame.cpp.obj"
   "CMakeFiles/tetris.dir/TetrisGame/TetrisGame.cpp.obj.d"
   "CMakeFiles/tetris.dir/library.cpp.obj"

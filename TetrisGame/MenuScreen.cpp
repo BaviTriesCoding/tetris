@@ -3,11 +3,12 @@
 //
 
 #include "MenuScreen.hpp"
-
+#include "ScoreScreen.hpp"
 
 MenuScreen::MenuScreen() {
     int xMax, yMax;
-
+    clear();
+    refresh();
     this->isActive = true;
     this->index_choice=0;
     getmaxyx(stdscr, yMax, xMax);
@@ -76,7 +77,8 @@ void MenuScreen::renderScreen() {
         game.play();
     }
     else if(this->index_choice==1){
-        mvwprintw(this->menu_window, 0,0, "punteggi");
+        delwin(this->menu_window);
+        auto score = ScoreScreen();
     }
     else if(this->index_choice==2){
         delwin(this->menu_window);

@@ -368,6 +368,30 @@ TetrisGame/MenuScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.s
 .PHONY : TetrisGame/MenuScreen.cpp.s
 
+TetrisGame/ScoreScreen.obj: TetrisGame/ScoreScreen.cpp.obj
+.PHONY : TetrisGame/ScoreScreen.obj
+
+# target to build an object file
+TetrisGame/ScoreScreen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj
+.PHONY : TetrisGame/ScoreScreen.cpp.obj
+
+TetrisGame/ScoreScreen.i: TetrisGame/ScoreScreen.cpp.i
+.PHONY : TetrisGame/ScoreScreen.i
+
+# target to preprocess a source file
+TetrisGame/ScoreScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.i
+.PHONY : TetrisGame/ScoreScreen.cpp.i
+
+TetrisGame/ScoreScreen.s: TetrisGame/ScoreScreen.cpp.s
+.PHONY : TetrisGame/ScoreScreen.s
+
+# target to generate assembly for a file
+TetrisGame/ScoreScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.s
+.PHONY : TetrisGame/ScoreScreen.cpp.s
+
 TetrisGame/TetrisGame.obj: TetrisGame/TetrisGame.cpp.obj
 .PHONY : TetrisGame/TetrisGame.obj
 
@@ -479,6 +503,9 @@ help:
 	@echo ... TetrisGame/MenuScreen.obj
 	@echo ... TetrisGame/MenuScreen.i
 	@echo ... TetrisGame/MenuScreen.s
+	@echo ... TetrisGame/ScoreScreen.obj
+	@echo ... TetrisGame/ScoreScreen.i
+	@echo ... TetrisGame/ScoreScreen.s
 	@echo ... TetrisGame/TetrisGame.obj
 	@echo ... TetrisGame/TetrisGame.i
 	@echo ... TetrisGame/TetrisGame.s
