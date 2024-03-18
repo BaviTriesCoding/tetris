@@ -1,0 +1,30 @@
+"C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\jonas\CLionProjects\tetris -B C:\Users\jonas\CLionProjects\tetris\cmake-build-debug-mingw
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
+-- The C compiler identification is GNU 6.3.0
+-- The CXX compiler identification is GNU 6.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/MinGW/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for cbreak in C:/MinGW/lib/libncurses.dll.a
+-- Looking for cbreak in C:/MinGW/lib/libncurses.dll.a - found
+-- Looking for nodelay in C:/MinGW/lib/libncurses.dll.a
+-- Looking for nodelay in C:/MinGW/lib/libncurses.dll.a - found
+-- Found Curses: C:/MinGW/lib/libncurses.dll.a  
+-- Configuring done (8.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw

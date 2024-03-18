@@ -28,6 +28,8 @@ add_executable(tetris main.cpp
         TetrisGame/TetrisGame.hpp
         TetrisGame/GameScreen.cpp
         TetrisGame/GameScreen.hpp
+        TetrisGame/MenuScreen.cpp
+        TetrisGame/MenuScreen.hpp
 )
 
 target_link_libraries(tetris ${CURSES_LIBRARIES})
