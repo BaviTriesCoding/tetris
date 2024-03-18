@@ -47,6 +47,7 @@ void Tetramin::show() {
         }
     }
     wrefresh(this->screen);
+    refresh();
 }
 void Tetramin::clear() {
     for(int i=0; i<4; i++){

@@ -5,8 +5,23 @@
 #include "GameScreen.hpp"
 GameScreen::GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int _yTetraStart, int _xTetraStart) {
     this->current_screen = newwin(_nLines, _nColumns, _yStart, _xStart);
-    keypad(this->current_screen, true);
-    nodelay(this->current_screen, true);
+    WINDOW* cornice = newwin(_nLines+2, _nColumns+4, _yStart-1, _xStart-2);
+    for(int i=0; i< 2; i++){
+        for(int j=0; j< _nColumns+4; j++){
+            init_pair(15, 15, 15);
+            mvwaddch(cornice, i * (_nLines + 1), j, ' ' | COLOR_PAIR(15));
+        }
+    }
+    for(int i=0; i< 2; i++){
+        for(int j=0; j< _nLines+2; j++){
+            init_pair(15, 15, 15);
+            mvwaddch(cornice, j, i * (_nColumns + 2
+            ), ' ' | COLOR_PAIR(15));
+            mvwaddch(cornice, j, i * (_nColumns + 2) + 1, ' ' | COLOR_PAIR(15));
+        }
+    }
+    wrefresh(cornice);
+    refresh();
 
     this->rows = _nLines;
     this->columns = _nColumns;

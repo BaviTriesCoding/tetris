@@ -14,14 +14,14 @@ TetrisGame::TetrisGame(WINDOW* _mainScreen) {
     int rows = getmaxy(_mainScreen), cols = getmaxx(_mainScreen);
     this->points = 0;
     this->main = new GameScreen( 20, 20, rows/2 - 10, cols/2 - 10, -2, 5);
-    this->hold = new GameScreen(6, 12, rows/2 - 10, cols/2 - 24, 1, 2);
+    this->hold = new GameScreen(6, 12, rows/2 - 10, cols/2 - 24, 1, 3);
     for(int i=0; i<3; i++){
         this->next[i] = new GameScreen(6, 12, rows/2 - 10 + 6*i, cols/2 + 12, 1, 3);
         this->next[i]->pairTetramin(rand()%28);
     }
     this->canHold = true;
     this->gameIsOver = false;
-    this->milliseconds = 200;
+    this->milliseconds = 100;
 }
 
 void TetrisGame::checkLines() {
@@ -56,6 +56,7 @@ void TetrisGame::nextTetramin() {
     this->next[1]->pairTetramin(this->next[2]->current_tetramin_code);
     this->next[2]->clear();
     this->next[2]->pairTetramin(rand()%28);
+
 }
 
 void TetrisGame::holdTetramin() {
@@ -182,7 +183,7 @@ int TetrisGame::play() {
     int ticks = 0;
     bool wentDown;
     this->nextTetramin();
-
+    refresh();
     while(!this->gameIsOver){
         this->evalInput(this->getSafeInput());
         ticks++;

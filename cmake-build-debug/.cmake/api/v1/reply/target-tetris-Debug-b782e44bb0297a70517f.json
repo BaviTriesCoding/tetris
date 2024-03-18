@@ -31,7 +31,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 28,
+				"line" : 33,
 				"parent" : 0
 			}
 		]
@@ -65,7 +65,9 @@
 				11,
 				13,
 				15,
-				17
+				17,
+				19,
+				21
 			]
 		}
 	],
@@ -116,7 +118,9 @@
 				11,
 				13,
 				15,
-				17
+				17,
+				19,
+				21
 			]
 		},
 		{
@@ -131,7 +135,9 @@
 				12,
 				14,
 				16,
-				18
+				18,
+				20,
+				22
 			]
 		}
 	],
@@ -240,6 +246,28 @@
 		{
 			"backtrace" : 1,
 			"path" : "Tetramin/Z_Piece.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "TetrisGame/TetrisGame.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "TetrisGame/TetrisGame.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "TetrisGame/GameScreen.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "TetrisGame/GameScreen.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],
