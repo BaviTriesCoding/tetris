@@ -9,19 +9,19 @@ GameScreen::GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int
     for(int i=0; i< 2; i++){
         for(int j=0; j< _nColumns+4; j++){
             init_pair(15, 15, 15);
-            mvwaddch(cornice, i * (_nLines + 1), j, ' ' | COLOR_PAIR(15));
+            mvwaddch(stdscr, i * (_nLines + 1) + _yStart - 1, j + _xStart - 2, '#' | COLOR_PAIR(15));
         }
     }
     for(int i=0; i< 2; i++){
         for(int j=0; j< _nLines+2; j++){
             init_pair(15, 15, 15);
-            mvwaddch(cornice, j, i * (_nColumns + 2
-            ), ' ' | COLOR_PAIR(15));
-            mvwaddch(cornice, j, i * (_nColumns + 2) + 1, ' ' | COLOR_PAIR(15));
+            mvwaddch(stdscr, j + _yStart - 1, i * (_nColumns + 2)+ _xStart - 2, '#' | COLOR_PAIR(15));
+            mvwaddch(stdscr, j + _yStart - 1, i * (_nColumns + 2) + _xStart - 1, '#' | COLOR_PAIR(15));
         }
     }
     wrefresh(cornice);
     refresh();
+    delwin(cornice);
 
     this->rows = _nLines;
     this->columns = _nColumns;

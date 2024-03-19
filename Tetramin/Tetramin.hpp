@@ -17,9 +17,13 @@ protected:
     WINDOW* screen;
     int defaultRotation[8][4][2];
     int stageRotation[8][5][2];
+    int shadowAdd;
+    coordinates shadowBlocks[4];
 public:
     coordinates blocks[4];
     short color;
+    short shadowColor;
+    bool shadowsAllowed;
     Tetramin(WINDOW* _screen, short _rotation, short _color);
     void show();
     void clear();
@@ -28,5 +32,6 @@ public:
     void hardDrop();
     int canRotate(bool _clockwise);
     void rotate(bool _clockwise, int _stage);
+    void updateShadow();
 };
 #endif //TETRIS_TETRAMIN_HPP

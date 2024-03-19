@@ -8,7 +8,7 @@
 #include "Tetramin.hpp"
 class L_Piece : public Tetramin {
 public:
-    L_Piece(WINDOW* _screen, int yStart, int xStart, short _rotation, short _color = 208);
+    L_Piece(WINDOW* _screen, int yStart, int xStart, short _rotation, short _color = 11);
 };
 
 

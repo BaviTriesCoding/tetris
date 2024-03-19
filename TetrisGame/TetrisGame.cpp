@@ -13,12 +13,13 @@ TetrisGame::TetrisGame(WINDOW* _mainScreen) {
     }
     int rows = getmaxy(_mainScreen), cols = getmaxx(_mainScreen);
     this->points = 0;
-    this->main = new GameScreen( 20, 20, rows/2 - 10, cols/2 - 10, -2, 5);
-    this->hold = new GameScreen(6, 12, rows/2 - 10, cols/2 - 24, 1, 3);
     for(int i=0; i<3; i++){
         this->next[i] = new GameScreen(6, 12, rows/2 - 10 + 6*i, cols/2 + 12, 1, 3);
         this->next[i]->pairTetramin(rand()%28);
     }
+    this->hold = new GameScreen(6, 12, rows/2 - 10, cols/2 - 24, 1, 3);
+    this->main = new GameScreen( 20, 20, rows/2 - 10, cols/2 - 10, -2, 5);
+
     this->canHold = true;
     this->gameIsOver = false;
     this->milliseconds = 100;
@@ -40,22 +41,28 @@ void TetrisGame::checkLines() {
                     mvwaddch(this->main->current_screen, i, j,moveChars);
                 }
             }
-            mvwprintw(this->main->current_screen, 0, 0, "                        ");
         }else {
             checkLine--;
         }
     }
     this->points = this->points + 50*clearedLines*(clearedLines + 1);
+    mvprintw(0,0, "%11d", this->points);
+    if(this->milliseconds>=50){ this->milliseconds = 100 - (this->points / 1000); }
 }
 
 void TetrisGame::nextTetramin() {
+    int semiRandom = rand()%28;
+    while(semiRandom/4 == this->next[1]->current_tetramin_code/4 || semiRandom/4 == this->next[2]->current_tetramin_code/4){
+        semiRandom = rand()%28;
+    }
     this->main->pairTetramin(this->next[0]->current_tetramin_code);
+    this->main->current_tetramin->shadowsAllowed = true;
     this->next[0]->clear();
     this->next[0]->pairTetramin(this->next[1]->current_tetramin_code);
     this->next[1]->clear();
     this->next[1]->pairTetramin(this->next[2]->current_tetramin_code);
     this->next[2]->clear();
-    this->next[2]->pairTetramin(rand()%28);
+    this->next[2]->pairTetramin(semiRandom);
 
 }
 
@@ -66,6 +73,7 @@ void TetrisGame::holdTetramin() {
             this->main->current_tetramin->clear();
             int _main = this->main->current_tetramin_code, _hold = this->hold->current_tetramin_code;
             this->main->pairTetramin(_hold);
+            this->main->current_tetramin->shadowsAllowed = true;
             this->hold->pairTetramin(_main);
         } else {
             this->main->current_tetramin->clear();
@@ -82,10 +90,10 @@ void TetrisGame::placeTetramin() {
             if (this->main->current_tetramin->blocks[i].y >= 0) {
                 mvwaddch(this->main->current_screen, this->main->current_tetramin->blocks[i].y,
                          this->main->current_tetramin->blocks[i].x * 2,
-                         '(' | this->main->current_tetramin->color);
+                         '(' | this->main->current_tetramin->color | A_REVERSE);
                 mvwaddch(this->main->current_screen, this->main->current_tetramin->blocks[i].y,
                          this->main->current_tetramin->blocks[i].x * 2 + 1,
-                         ')' | this->main->current_tetramin->color);
+                         ')' | this->main->current_tetramin->color | A_REVERSE);
             }
             this->gameIsOver = this->gameIsOver || this->main->current_tetramin->blocks[i].y < 0;
         }
