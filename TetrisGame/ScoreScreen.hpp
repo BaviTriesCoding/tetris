@@ -6,17 +6,27 @@
 #define TETRIS_SCORESCREEN_HPP
 #include <ncurses/ncurses.h>
 #include <fstream>
-struct result{
-    char player[20];
-    int points;
-    result *next;
+#include <cstring>
+using namespace std;
+struct giocata{
+    int punteggio;
+    string tempo;
+    string nome;
+    giocata *next;
+
 };
+typedef giocata *p_giocata;
 class ScoreScreen {
 protected:
+
     WINDOW  *score_screen;
-    result scores;
+    p_giocata scores;
     bool open;
 public:
+    void scambia( p_giocata , p_giocata);
+    void print_list(p_giocata, int);
+    p_giocata sort(p_giocata);
+    p_giocata creaLista();
     ScoreScreen();
     void ScoreList();
     void goToMenu();

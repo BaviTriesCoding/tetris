@@ -1073,6 +1073,8 @@ CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj: C:/Users/jonas/CLionProject
   C:/MinGW/include/stdint.h \
   C:/MinGW/include/stdio.h \
   C:/MinGW/include/stdlib.h \
+  C:/MinGW/include/string.h \
+  C:/MinGW/include/strings.h \
   C:/MinGW/include/sys/stat.h \
   C:/MinGW/include/sys/types.h \
   C:/MinGW/include/sys/types.h \
@@ -1131,6 +1133,7 @@ CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj: C:/Users/jonas/CLionProject
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdint \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdio \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdlib \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstring \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ctime \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwchar \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwctype \
@@ -1204,6 +1207,8 @@ CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj: C:/Users/jonas/CLionProjec
   C:/MinGW/include/stdint.h \
   C:/MinGW/include/stdio.h \
   C:/MinGW/include/stdlib.h \
+  C:/MinGW/include/string.h \
+  C:/MinGW/include/strings.h \
   C:/MinGW/include/sys/stat.h \
   C:/MinGW/include/sys/types.h \
   C:/MinGW/include/sys/types.h \
@@ -1262,6 +1267,7 @@ CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj: C:/Users/jonas/CLionProjec
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdint \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdio \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstdlib \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstring \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ctime \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwchar \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cwctype \
@@ -1951,7 +1957,13 @@ C:/Users/jonas/CLionProjects/tetris/TetrisGame/ScoreScreen.hpp:
 
 C:/Users/jonas/CLionProjects/tetris/TetrisGame/TetrisGame.hpp:
 
+C:/MinGW/include/string.h:
+
+C:/MinGW/include/strings.h:
+
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/fstream.tcc:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cstring:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/basic_file.h:
 

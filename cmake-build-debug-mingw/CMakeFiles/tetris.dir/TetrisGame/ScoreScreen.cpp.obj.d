@@ -107,6 +107,9 @@ CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\basic_file.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++io.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\fstream.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstring \
+ c:\mingw\include\string.h c:\mingw\include\strings.h \
+ c:\mingw\include\wchar.h \
  C:\Users\jonas\CLionProjects\tetris\TetrisGame\MenuScreen.hpp \
  C:\Users\jonas\CLionProjects\tetris\TetrisGame\TetrisGame.hpp \
  C:\Users\jonas\CLionProjects\tetris\TetrisGame\GameScreen.hpp \
