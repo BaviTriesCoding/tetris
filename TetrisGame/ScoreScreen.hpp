@@ -13,19 +13,20 @@ struct giocata{
     string tempo;
     string nome;
     giocata *next;
-
 };
 typedef giocata *p_giocata;
 class ScoreScreen {
 protected:
-
     WINDOW  *score_screen;
     p_giocata scores;
     bool open;
+    int line;
 public:
+    void move_up();
+    void move_down();
     void scambia( p_giocata , p_giocata);
-    void print_list(p_giocata, int);
-    p_giocata sort(p_giocata);
+    void print_list();
+    p_giocata sort();
     p_giocata creaLista();
     ScoreScreen();
     void ScoreList();

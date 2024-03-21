@@ -7,16 +7,26 @@
 
 ScoreScreen::ScoreScreen() {
     this->open = true;
+    this->line=0;
     int i = 2, height, width;
     getmaxyx(stdscr, height, width);
     this->score_screen = newwin(height - 2, width - 2, 1, 1);
-
+    keypad(this->score_screen, true);
     ScoreList();
-    scroll(this->score_screen);
     wrefresh(this->score_screen);
     refresh();
     while(this->open){
         switch (wgetch(this->score_screen)) {
+            case KEY_DOWN:
+                this->line+=1;
+                print_list();
+                break;
+            case KEY_UP:
+                if(this->line>0){
+                    this->line-=1;
+                    print_list();
+                }
+                break;
             case 27:
                 this->open=false;
                 goToMenu();
@@ -26,7 +36,6 @@ ScoreScreen::ScoreScreen() {
         }
     }
 }
-
 void ScoreScreen::goToMenu() {
     wclear(this->score_screen);
     wrefresh(this->score_screen);
@@ -48,11 +57,11 @@ void ScoreScreen::scambia( p_giocata tmp, p_giocata max){
     delete tmp2;
     tmp2 = nullptr;
 }
-p_giocata ScoreScreen::sort(p_giocata head){
+p_giocata ScoreScreen::sort(){
     p_giocata tmp, tmp1;
     p_giocata max;
-    tmp = head;
-    max = head;
+    tmp = this->scores;
+    max = this->scores;
     while(tmp->next!= nullptr){
         tmp1=tmp;
         max=tmp;
@@ -66,7 +75,7 @@ p_giocata ScoreScreen::sort(p_giocata head){
         tmp=tmp->next;
     }
 
-    return head;
+    return this->scores;
 }
 p_giocata ScoreScreen::creaLista() {
     p_giocata head = new giocata;
@@ -103,29 +112,37 @@ p_giocata ScoreScreen::creaLista() {
     }
     return head;
 }
-
-void ScoreScreen::print_list(p_giocata head, int width) {
+void ScoreScreen::print_list() {
+    p_giocata head = this->scores;
+    wclear(this->score_screen);
     int i = 6;
+    int count_line=0;
+    int height, width;
+    getmaxyx(stdscr, height, width);
 
+    mvprintw(4,(width-7)/2, "Results");
+    mvprintw(5,(width-64)/2, "----------------------------------------------------------------");
     while(head != nullptr){
-
-        mvwprintw(this->score_screen,i, (width-30)/3,"nome: %s",head->nome.c_str());
-        mvwprintw(this->score_screen,i, (width-30)/3+head->nome.length()+15,"punteggio: %d",head->punteggio);
-        mvwprintw(this->score_screen,i, (width-30)/3+ to_string(head->punteggio).length()+40,"tempo: %s",head->tempo.c_str());
+        if(count_line >= this->line){
+            mvwprintw(this->score_screen,i, (width-30)/3,"nome: %s",head->nome.c_str());
+            mvwprintw(this->score_screen,i, (width-30)/3+head->nome.length()+15,"punteggio: %d",head->punteggio);
+            mvwprintw(this->score_screen,i, (width-30)/3+ to_string(head->punteggio).length()+40,"tempo: %s",head->tempo.c_str());
+            i+=2;
+        }
         head=head->next;
-        i+=2;
+        count_line+=1;
+
     }
+    mvprintw(height-1,(width-64)/2, "----------------------------------------------------------------");
+    wrefresh(this->score_screen);
+    refresh();
 }
 void ScoreScreen::ScoreList() {
-    p_giocata head = new giocata;
-    head = creaLista();
-    head = sort(head);
+    this->scores = new giocata;
+    this->scores = creaLista();
+    this->scores = sort();
     int height, width;
     char line;
     getmaxyx(stdscr, height, width);
-    print_list(head, width);
-    mvprintw(4,(width-7)/2, "Resluts");
-    mvprintw(5,(width-64)/2, "----------------------------------------------------------------");
-
-
+    print_list();
 }
