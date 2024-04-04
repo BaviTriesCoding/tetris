@@ -22,13 +22,7 @@ void NicknameScreen::inputNickName() {
         char tmp[0];
         switch (tmp[0]=wgetch(this->nickNameScreen)) {
             case 10:
-                if(this->nickName.length()>0){
-                    this->isActive=false;
-                    wclear(this->nickNameScreen);
-                    delwin(this->nickNameScreen);
-                    refresh();
-                    showMenu();
-                }
+                this->isActive=false;
                 break;
             case 8:
                 this->nickName = this->nickName.substr(0, this->nickName.length()-1);
@@ -41,7 +35,9 @@ void NicknameScreen::inputNickName() {
         }
         printNickName();
     }
-
+    delwin(this->nickNameScreen);
+    clear();
+    refresh();
 }
 
 void NicknameScreen::showMenu() {
@@ -58,4 +54,8 @@ void NicknameScreen::printNickName() {
     mvwprintw(this->nickNameScreen, 2, 2, "Benvenuto!");
     mvwprintw(this->nickNameScreen, 12, 2, "premi invio giocare!");
     wrefresh(this->nickNameScreen);
+}
+
+string NicknameScreen::returnNickname() {
+    return this->nickName;
 }

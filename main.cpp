@@ -4,7 +4,7 @@
 int main() {
     srand(time(nullptr));
     initializeNcurses();
-    auto nickName = NicknameScreen();
+    auto Menu = MenuScreen();
     nodelay(stdscr, false);
     getch();
     mvprintw(0,0, "press any button to exit");

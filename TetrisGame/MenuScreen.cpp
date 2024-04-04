@@ -4,39 +4,20 @@
 
 #include "MenuScreen.hpp"
 #include "ScoreScreen.hpp"
+#include "NicknameScreen.hpp"
 using namespace std;
+
 MenuScreen::MenuScreen() {
-    int xMax, yMax;
+
     clear();
     refresh();
+    NicknameScreen nickname;
+    this->nickName=nickname.returnNickname();
     this->isActive = true;
     this->index_choice=0;
-    getmaxyx(stdscr, yMax, xMax);
-    this->menu_window = newwin(yMax/2, xMax/4, yMax/4, xMax/3);
-    keypad(this->menu_window, true);
-    box(this->menu_window, 0, 0);
-    isActiveChoice();
-    while(isActive){
-        switch (wgetch(this->menu_window)) {
-            case KEY_DOWN:
-                this->index_choice++;
-                this->index_choice=this->index_choice%3;
-                break;
-            case KEY_UP:
-                this->index_choice+=2;
-                this->index_choice=this->index_choice%3;
-                break;
-            case 10:
-                this->isActive = false;
-                renderScreen();
-            default:
-                break;
-        }
-        isActiveChoice();
-    }
-    wgetch(this->menu_window);
+    refresh();
 
-
+    showMenu();
 }
 
 void MenuScreen::isActiveChoice() {
@@ -70,23 +51,72 @@ void MenuScreen::isActiveChoice() {
 void MenuScreen::renderScreen() {
     wclear(this->menu_window);
     wrefresh(this->menu_window);
+    clear();
     refresh();
+    delwin(this->menu_window);
     if(this->index_choice==0){
-        delwin(this->menu_window);
         auto game = TetrisGame(stdscr);
-        game.play();
+        this->result = game.play();
+        writeResults();
+        resultScreen();
+        showMenu();
+        refresh();
     }
     else if(this->index_choice==1){
-        wclear(this->menu_window);
-        wrefresh(this->menu_window);
-        clear();
-        refresh();
-        delwin(this->menu_window);
         auto score = ScoreScreen();
+        showMenu();
     }
     else if(this->index_choice==2){
         delwin(this->menu_window);
         endwin();
     }
+}
+
+
+void MenuScreen::resultScreen() {
+    int xMax, yMax;
+    refresh();
+    this->index_choice=0;
+    getmaxyx(stdscr, yMax, xMax);
+    this->result_screen = newwin(yMax/6, xMax/4, (yMax*6)/8, xMax/3);
+    box(this->result_screen,0,0);
+    mvwprintw(this->result_screen, 1,1,"complimenti %s!", this->nickName.c_str());
+    mvwprintw(this->result_screen, 3,1,"hai fatto %d punti!", this->result);
+    wrefresh(this->result_screen);
+}
+
+void MenuScreen::showMenu() {
+    this->isActive=true;
+    int xMax, yMax;
+    getmaxyx(stdscr, yMax, xMax);
+    this->menu_window = newwin(yMax/2, xMax/4, yMax/4, xMax/3);
+    keypad(this->menu_window, true);
+    box(this->menu_window, 0, 0);
+    isActiveChoice();
+    while(isActive){
+        switch (wgetch(this->menu_window)) {
+            case KEY_DOWN:
+                this->index_choice++;
+                this->index_choice=this->index_choice%3;
+                break;
+            case KEY_UP:
+                this->index_choice+=2;
+                this->index_choice=this->index_choice%3;
+                break;
+            case 10:
+                this->isActive = false;
+                renderScreen();
+            default:
+                break;
+        }
+        isActiveChoice();
+    }
+}
+
+void MenuScreen::writeResults() {
+    ofstream outputFile; /* Dichiarazione di tipo */
+    outputFile.open("score.txt",ios::app); /* Apertura del file */
+    outputFile << this->nickName+","+ to_string(this->result)+"!"+"2:45"<< '\n';
+    outputFile.close();
 }
 

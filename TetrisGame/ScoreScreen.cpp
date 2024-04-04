@@ -35,7 +35,11 @@ ScoreScreen::ScoreScreen() {
                 break;
             case 27:
                 this->open=false;
-                goToMenu();
+                wclear(this->score_screen);
+                wrefresh(this->score_screen);
+                clear();
+                refresh();
+                delwin(this->score_screen);
                 break;
             default:
                 break;

@@ -12,13 +12,16 @@ using namespace std;
 class NicknameScreen {
 protected:
     WINDOW *nickNameScreen;
-    string nickName;
     bool isActive;
+    string nickName;
+    string offNickName;
 public:
+
     NicknameScreen();
     void inputNickName();
     void showMenu();
     void printNickName();
+    string returnNickname();
 };
 
 

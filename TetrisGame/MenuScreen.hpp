@@ -15,11 +15,16 @@ protected:
     bool isActive;
     WINDOW *menu_window;
     int index_choice;
+    WINDOW *result_screen;
+    string nickName;
+    int result;
 public:
     MenuScreen();
     void isActiveChoice();
     void renderScreen();
-
+    void resultScreen();
+    void showMenu();
+    void writeResults();
 };
 
 

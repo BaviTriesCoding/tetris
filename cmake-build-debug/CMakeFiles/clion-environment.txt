@@ -1,3 +1,4 @@
-ToolSet: 1.0 (local)Options: 
+ToolSet: 5.0 (local)@C:\MinGW
+Options: 
 
-Options:-DCMAKE_MAKE_PROGRAM=/snap/clion/265/bin/ninja/linux/x64/ninja
+Options:
