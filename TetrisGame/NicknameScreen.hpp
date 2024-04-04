@@ -18,6 +18,7 @@ public:
     NicknameScreen();
     void inputNickName();
     void showMenu();
+    void printNickName();
 };
 
 

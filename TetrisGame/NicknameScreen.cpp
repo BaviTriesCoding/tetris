@@ -11,42 +11,51 @@ NicknameScreen::NicknameScreen() {
     refresh();
     getmaxyx(stdscr, yMax, xMax);
     this->nickNameScreen = newwin(yMax/2, xMax/4, yMax/4, xMax/3);
+
     keypad(this->nickNameScreen, TRUE);
-    mvwprintw(this->nickNameScreen, 4, 2, "Benvenuto!");
-    wrefresh(this->nickNameScreen);
+    printNickName();
     inputNickName();
 }
 
 void NicknameScreen::inputNickName() {
-    int count = 0;
     while(isActive){
         char tmp[0];
         switch (tmp[0]=wgetch(this->nickNameScreen)) {
             case 10:
-                this->isActive=false;
-                wclear(this->nickNameScreen);
-                delwin(this->nickNameScreen);
-                refresh();
-                showMenu();
+                if(this->nickName.length()>0){
+                    this->isActive=false;
+                    wclear(this->nickNameScreen);
+                    delwin(this->nickNameScreen);
+                    refresh();
+                    showMenu();
+                }
+                break;
+            case 8:
+                this->nickName = this->nickName.substr(0, this->nickName.length()-1);
                 break;
             default:
-                if((int)tmp[0]!=8){
-                    this->nickName+=tmp[0];
-                    mvwprintw(this->nickNameScreen, 7,2,"chiave: %d", tmp[0]);
-
+                if(nickName.length()<25) {
+                    this->nickName += tmp[0];
                 }
-                else{
-                    this->nickName = this->nickName.substr(0, this->nickName.length()-1);
-                }
-                wclear(this->nickNameScreen);
-                mvwprintw(this->nickNameScreen, 6,2,"nome: %s",this->nickName.c_str());
-                wrefresh(this->nickNameScreen);
                 break;
         }
+        printNickName();
     }
-    count++;
+
 }
 
 void NicknameScreen::showMenu() {
     auto menu = MenuScreen();
+}
+void NicknameScreen::printNickName() {
+    wclear(this->nickNameScreen);
+    box(this->nickNameScreen,0,0);
+    mvwprintw(this->nickNameScreen, 5,2,"inserisci il nickname:");
+    mvwprintw(this->nickNameScreen, 7,2,"--------------------------");
+    mvwprintw(this->nickNameScreen, 8,2,"|%s",this->nickName.c_str());
+    mvwprintw(this->nickNameScreen, 8,27,"|");
+    mvwprintw(this->nickNameScreen, 9,2,"--------------------------");
+    mvwprintw(this->nickNameScreen, 2, 2, "Benvenuto!");
+    mvwprintw(this->nickNameScreen, 12, 2, "premi invio giocare!");
+    wrefresh(this->nickNameScreen);
 }
