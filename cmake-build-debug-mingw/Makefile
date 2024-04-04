@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\jonas\CLionProjects\tetris
+CMAKE_SOURCE_DIR = C:\Users\jonas\CLionProjects\tetris_jonas
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\jonas\CLionProjects\tetris\cmake-build-debug-mingw
+CMAKE_BINARY_DIR = C:\Users\jonas\CLionProjects\tetris_jonas\cmake-build-debug-mingw
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jonas\CLionProjects\tetris\cmake-build-debug-mingw\CMakeFiles C:\Users\jonas\CLionProjects\tetris\cmake-build-debug-mingw\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jonas\CLionProjects\tetris_jonas\cmake-build-debug-mingw\CMakeFiles C:\Users\jonas\CLionProjects\tetris_jonas\cmake-build-debug-mingw\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jonas\CLionProjects\tetris\cmake-build-debug-mingw\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jonas\CLionProjects\tetris_jonas\cmake-build-debug-mingw\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -368,6 +368,30 @@ TetrisGame/MenuScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.s
 .PHONY : TetrisGame/MenuScreen.cpp.s
 
+TetrisGame/NicknameScreen.obj: TetrisGame/NicknameScreen.cpp.obj
+.PHONY : TetrisGame/NicknameScreen.obj
+
+# target to build an object file
+TetrisGame/NicknameScreen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/NicknameScreen.cpp.obj
+.PHONY : TetrisGame/NicknameScreen.cpp.obj
+
+TetrisGame/NicknameScreen.i: TetrisGame/NicknameScreen.cpp.i
+.PHONY : TetrisGame/NicknameScreen.i
+
+# target to preprocess a source file
+TetrisGame/NicknameScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/NicknameScreen.cpp.i
+.PHONY : TetrisGame/NicknameScreen.cpp.i
+
+TetrisGame/NicknameScreen.s: TetrisGame/NicknameScreen.cpp.s
+.PHONY : TetrisGame/NicknameScreen.s
+
+# target to generate assembly for a file
+TetrisGame/NicknameScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tetris.dir\build.make CMakeFiles/tetris.dir/TetrisGame/NicknameScreen.cpp.s
+.PHONY : TetrisGame/NicknameScreen.cpp.s
+
 TetrisGame/ScoreScreen.obj: TetrisGame/ScoreScreen.cpp.obj
 .PHONY : TetrisGame/ScoreScreen.obj
 
@@ -503,6 +527,9 @@ help:
 	@echo ... TetrisGame/MenuScreen.obj
 	@echo ... TetrisGame/MenuScreen.i
 	@echo ... TetrisGame/MenuScreen.s
+	@echo ... TetrisGame/NicknameScreen.obj
+	@echo ... TetrisGame/NicknameScreen.i
+	@echo ... TetrisGame/NicknameScreen.s
 	@echo ... TetrisGame/ScoreScreen.obj
 	@echo ... TetrisGame/ScoreScreen.i
 	@echo ... TetrisGame/ScoreScreen.s

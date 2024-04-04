@@ -4,7 +4,7 @@
 
 #include "MenuScreen.hpp"
 #include "ScoreScreen.hpp"
-
+using namespace std;
 MenuScreen::MenuScreen() {
     int xMax, yMax;
     clear();
@@ -17,7 +17,6 @@ MenuScreen::MenuScreen() {
     box(this->menu_window, 0, 0);
     isActiveChoice();
     while(isActive){
-
         switch (wgetch(this->menu_window)) {
             case KEY_DOWN:
                 this->index_choice++;
@@ -73,10 +72,15 @@ void MenuScreen::renderScreen() {
     wrefresh(this->menu_window);
     refresh();
     if(this->index_choice==0){
+        delwin(this->menu_window);
         auto game = TetrisGame(stdscr);
         game.play();
     }
     else if(this->index_choice==1){
+        wclear(this->menu_window);
+        wrefresh(this->menu_window);
+        clear();
+        refresh();
         delwin(this->menu_window);
         auto score = ScoreScreen();
     }
@@ -85,3 +89,4 @@ void MenuScreen::renderScreen() {
         endwin();
     }
 }
+

@@ -217,5 +217,12 @@ int TetrisGame::play() {
             ticks=0;
         }
     }
+    delwin(this->main->current_screen);
+    delwin(this->next[0]->current_screen);
+    delwin(this->next[1]->current_screen);
+    delwin(this->next[2]->current_screen);
+    delwin(this->hold->current_screen);
+    clear();
+    refresh();
     return this->points;
 }

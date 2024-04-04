@@ -4,7 +4,10 @@
 
 #include "GameScreen.hpp"
 GameScreen::GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int _yTetraStart, int _xTetraStart) {
+    int width, height;
     this->current_screen = newwin(_nLines, _nColumns, _yStart, _xStart);
+    getmaxyx(this->current_screen, height, width);
+    mvprintw(0,(width+51)/2, "[esc] quit    [space] drop   [e] save    [q] rotate");
     keypad(this->current_screen, true);
     nodelay(this->current_screen, true);
 

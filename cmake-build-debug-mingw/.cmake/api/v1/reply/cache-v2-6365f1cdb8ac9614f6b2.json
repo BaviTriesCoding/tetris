@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw"
+			"value" : "c:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -643,7 +643,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/jonas/CLionProjects/tetris"
+			"value" : "C:/Users/jonas/CLionProjects/tetris_jonas"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1495,7 +1495,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw"
+			"value" : "C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw"
 		},
 		{
 			"name" : "tetris_IS_TOP_LEVEL",
@@ -1519,7 +1519,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/jonas/CLionProjects/tetris"
+			"value" : "C:/Users/jonas/CLionProjects/tetris_jonas"
 		}
 	],
 	"kind" : "cache",

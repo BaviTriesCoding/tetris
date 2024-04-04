@@ -1,6 +1,6 @@
 CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj: \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\ScoreScreen.cpp \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\ScoreScreen.hpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\ScoreScreen.cpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\ScoreScreen.hpp \
  c:\mingw\include\ncurses\ncurses.h \
  c:\mingw\include\ncursesw\ncurses_dll.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h \
@@ -110,18 +110,18 @@ CMakeFiles/tetris.dir/TetrisGame/ScoreScreen.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstring \
  c:\mingw\include\string.h c:\mingw\include\strings.h \
  c:\mingw\include\wchar.h \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\MenuScreen.hpp \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\TetrisGame.hpp \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\GameScreen.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\i_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\Tetramin.hpp \
- c:\users\jonas\clionprojects\tetris\library.h \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\MenuScreen.hpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\TetrisGame.hpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\GameScreen.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\i_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\Tetramin.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\library.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cmath c:\mingw\include\math.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ctime c:\mingw\include\time.h \
- c:\users\jonas\clionprojects\tetris\tetramin\o_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\l_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\j_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\t_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\s_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\z_piece.hpp
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\o_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\l_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\j_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\t_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\s_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\z_piece.hpp

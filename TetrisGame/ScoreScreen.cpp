@@ -8,6 +8,8 @@
 ScoreScreen::ScoreScreen() {
     this->open = true;
     this->line=0;
+    this->list_length=0;
+    this->scroll_index = 7;
     int i = 2, height, width;
     getmaxyx(stdscr, height, width);
     this->score_screen = newwin(height - 2, width - 2, 1, 1);
@@ -18,12 +20,16 @@ ScoreScreen::ScoreScreen() {
     while(this->open){
         switch (wgetch(this->score_screen)) {
             case KEY_DOWN:
-                this->line+=1;
-                print_list();
+                if(this->line+(height-9)/2<this->list_length){
+                    this->line+=1;
+                    this->scroll_index+=((height-9)/(this->list_length*2-height));
+                    print_list();
+                }
                 break;
             case KEY_UP:
                 if(this->line>0){
                     this->line-=1;
+                    this->scroll_index-=((height-9)/(this->list_length*2-height));
                     print_list();
                 }
                 break;
@@ -80,11 +86,9 @@ p_giocata ScoreScreen::sort(){
 p_giocata ScoreScreen::creaLista() {
     p_giocata head = new giocata;
     head->next = nullptr;
-    char number;
     int height, width;
     getmaxyx(stdscr, height, width);
-    mvprintw(4, (width - 7) / 2, "Resluts");
-    mvprintw(5, (width - 30) / 2, "------------------------------");
+
     int i = (width - 30) / 2;
     ifstream test("score.txt"); /* Dichiarazione di tipo */
     if (test.is_open()) {
@@ -92,6 +96,7 @@ p_giocata ScoreScreen::creaLista() {
         int break1, break2, length;
         while (test) {
             while (getline(test, line)) {
+                this->list_length+=1;
                 p_giocata tmp = new giocata;
                 break1 = line.find(',');
                 break2 = line.find('!');
@@ -120,8 +125,10 @@ void ScoreScreen::print_list() {
     int height, width;
     getmaxyx(stdscr, height, width);
 
-    mvprintw(4,(width-7)/2, "Results");
+    mvprintw(2, (width - 63) / 2, "[esc] quit     [arrow_up] scroll up    [arrow_down] scroll down");
+    mvprintw(4, (width - 7) / 2, "Results");
     mvprintw(5,(width-64)/2, "----------------------------------------------------------------");
+    mvprintw(this->scroll_index,width/2+32,"|");
     while(head != nullptr){
         if(count_line >= this->line){
             mvwprintw(this->score_screen,i, (width-30)/3,"nome: %s",head->nome.c_str());

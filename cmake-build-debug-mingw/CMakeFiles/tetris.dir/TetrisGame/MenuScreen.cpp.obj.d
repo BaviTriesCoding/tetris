@@ -1,6 +1,6 @@
 CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj: \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\MenuScreen.cpp \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\MenuScreen.hpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\MenuScreen.cpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\MenuScreen.hpp \
  c:\mingw\include\ncurses\ncurses.h \
  c:\mingw\include\ncursesw\ncurses_dll.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h \
@@ -11,11 +11,11 @@ CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj: \
  c:\mingw\include\sys/types.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h \
  c:\mingw\include\ncursesw\unctrl.h c:\mingw\include\ncursesw\curses.h \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\TetrisGame.hpp \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\GameScreen.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\i_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\Tetramin.hpp \
- c:\users\jonas\clionprojects\tetris\library.h \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\TetrisGame.hpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\GameScreen.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\i_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\Tetramin.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\library.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h \
@@ -110,13 +110,13 @@ CMakeFiles/tetris.dir/TetrisGame/MenuScreen.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cmath c:\mingw\include\math.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ctime c:\mingw\include\time.h \
- c:\users\jonas\clionprojects\tetris\tetramin\o_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\l_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\j_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\t_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\s_piece.hpp \
- c:\users\jonas\clionprojects\tetris\tetramin\z_piece.hpp \
- C:\Users\jonas\CLionProjects\tetris\TetrisGame\ScoreScreen.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\o_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\l_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\j_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\t_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\s_piece.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\tetramin\z_piece.hpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\TetrisGame\ScoreScreen.hpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\fstream \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\codecvt.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\basic_file.h \

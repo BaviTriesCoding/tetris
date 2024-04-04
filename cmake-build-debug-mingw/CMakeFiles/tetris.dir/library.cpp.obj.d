@@ -1,6 +1,6 @@
 CMakeFiles/tetris.dir/library.cpp.obj: \
- C:\Users\jonas\CLionProjects\tetris\library.cpp \
- C:\Users\jonas\CLionProjects\tetris\library.h \
+ C:\Users\jonas\CLionProjects\tetris_jonas\library.cpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\library.h \
  c:\mingw\include\ncurses\ncurses.h \
  c:\mingw\include\ncursesw\ncurses_dll.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h \

@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\jonas\CLionProjects\tetris -B C:\Users\jonas\CLionProjects\tetris\cmake-build-debug-mingw
+"C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\jonas\CLionProjects\tetris_jonas -B C:\Users\jonas\CLionProjects\tetris_jonas\cmake-build-debug-mingw
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -8,6 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.3s)
+-- Configuring done (0.8s)
 -- Generating done (0.1s)
--- Build files have been written to: C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw
+-- Build files have been written to: C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw

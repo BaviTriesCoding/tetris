@@ -19,8 +19,10 @@ class ScoreScreen {
 protected:
     WINDOW  *score_screen;
     p_giocata scores;
+    int scroll_index;
     bool open;
     int line;
+    int list_length;
 public:
     void move_up();
     void move_down();

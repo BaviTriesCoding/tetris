@@ -204,8 +204,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw",
-		"source" : "C:/Users/jonas/CLionProjects/tetris"
+		"build" : "C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw",
+		"source" : "C:/Users/jonas/CLionProjects/tetris_jonas"
 	},
 	"version" : 
 	{
