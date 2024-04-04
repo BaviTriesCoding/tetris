@@ -4,7 +4,7 @@
 
 #include "O_Piece.hpp"
 
-O_Piece::O_Piece(WINDOW *_screen, short _rotation, short _color): Tetramin(_screen, _rotation, _color){
+O_Piece::O_Piece(WINDOW *_screen, int yStart, int xStart, short _rotation, short _color): Tetramin(_screen, _rotation, _color){
     for(int i=0; i<8; i++){
         for(int j=0; j<4; j++){
             for(int k=0; k<2; k++){
@@ -20,15 +20,15 @@ O_Piece::O_Piece(WINDOW *_screen, short _rotation, short _color): Tetramin(_scre
             }
         }
     }
-    this->blocks[0].y = -1;
-    this->blocks[0].x = 3;
+    this->blocks[0].y = yStart + 1;
+    this->blocks[0].x = xStart - 1;
 
-    this->blocks[1].y = 0;
-    this->blocks[1].x = 3;
+    this->blocks[1].y = yStart + 2;
+    this->blocks[1].x = xStart - 1;
 
-    this->blocks[2].y = -1;
-    this->blocks[2].x = 4;
+    this->blocks[2].y = yStart + 1;
+    this->blocks[2].x = xStart;
 
-    this->blocks[3].y = 0;
-    this->blocks[3].x = 4;
+    this->blocks[3].y = yStart + 2;
+    this->blocks[3].x = xStart;
 }

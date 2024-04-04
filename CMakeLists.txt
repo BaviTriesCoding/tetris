@@ -23,6 +23,17 @@ add_executable(tetris main.cpp
         Tetramin/S_Piece.cpp
         Tetramin/S_Piece.hpp
         Tetramin/Z_Piece.cpp
-        Tetramin/Z_Piece.hpp)
+        Tetramin/Z_Piece.hpp
+        TetrisGame/TetrisGame.cpp
+        TetrisGame/TetrisGame.hpp
+        TetrisGame/GameScreen.cpp
+        TetrisGame/GameScreen.hpp
+        TetrisGame/MenuScreen.cpp
+        TetrisGame/MenuScreen.hpp
+        TetrisGame/ScoreScreen.cpp
+        TetrisGame/ScoreScreen.hpp
+        TetrisGame/NicknameScreen.cpp
+        TetrisGame/NicknameScreen.hpp
+)
 
 target_link_libraries(tetris ${CURSES_LIBRARIES})

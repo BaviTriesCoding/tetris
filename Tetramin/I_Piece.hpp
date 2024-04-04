@@ -9,7 +9,7 @@
 
 class I_Piece: public Tetramin{
 public:
-    I_Piece(WINDOW* _screen, short _rotation, short _color = 6);
+    I_Piece(WINDOW* _screen, int yStart, int xStart, short _rotation, short _color = 6);
 };
 
 #endif //FALLING_BLOCK_I_PIECE_HPP
