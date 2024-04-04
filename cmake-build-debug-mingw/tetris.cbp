@@ -8,6 +8,7 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
+<<<<<<< HEAD
 				<Option working_dir="C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw"/>
 				<Option type="4"/>
 				<MakeCommands>
@@ -20,6 +21,20 @@
 			<Target title="tetris">
 				<Option output="C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/tetris.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw"/>
+=======
+				<Option working_dir="C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tetris">
+				<Option output="C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/tetris.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw"/>
+>>>>>>> origin/jonas
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -32,6 +47,7 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
 					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 tetris"/>
 					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
@@ -41,6 +57,17 @@
 			<Target title="tetris/fast">
 				<Option output="C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/tetris.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw"/>
+=======
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 tetris"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tetris/fast">
+				<Option output="C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/tetris.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw"/>
+>>>>>>> origin/jonas
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,6 +80,7 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
 					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 tetris/fast"/>
 					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
@@ -150,6 +178,123 @@
 			<Option target="tetris"/>
 		</Unit>
 		<Unit filename="C:/Users/jonas/CLionProjects/tetris/CMakeLists.txt">
+=======
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 tetris/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/jonas/CLionProjects/tetris_jonas/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/I_Piece.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/I_Piece.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/J_Piece.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/J_Piece.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/L_Piece.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/L_Piece.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/O_Piece.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/O_Piece.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/S_Piece.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/S_Piece.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/T_Piece.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/T_Piece.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/Tetramin.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/Tetramin.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/Z_Piece.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/Tetramin/Z_Piece.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/GameScreen.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/GameScreen.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/MenuScreen.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/MenuScreen.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/NicknameScreen.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/NicknameScreen.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/ScoreScreen.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/ScoreScreen.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/TetrisGame.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/TetrisGame/TetrisGame.hpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/library.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/library.h">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/main.cpp">
+			<Option target="tetris"/>
+		</Unit>
+		<Unit filename="C:/Users/jonas/CLionProjects/tetris_jonas/CMakeLists.txt">
+>>>>>>> origin/jonas
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

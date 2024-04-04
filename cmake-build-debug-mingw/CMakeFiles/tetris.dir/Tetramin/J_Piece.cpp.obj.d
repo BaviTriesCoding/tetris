@@ -1,8 +1,15 @@
 CMakeFiles/tetris.dir/Tetramin/J_Piece.cpp.obj: \
+<<<<<<< HEAD
  C:\Users\jonas\CLionProjects\tetris\Tetramin\J_Piece.cpp \
  C:\Users\jonas\CLionProjects\tetris\Tetramin\J_Piece.hpp \
  C:\Users\jonas\CLionProjects\tetris\Tetramin\Tetramin.hpp \
  c:\users\jonas\clionprojects\tetris\library.h \
+=======
+ C:\Users\jonas\CLionProjects\tetris_jonas\Tetramin\J_Piece.cpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\Tetramin\J_Piece.hpp \
+ C:\Users\jonas\CLionProjects\tetris_jonas\Tetramin\Tetramin.hpp \
+ c:\users\jonas\clionprojects\tetris_jonas\library.h \
+>>>>>>> origin/jonas
  c:\mingw\include\ncurses\ncurses.h \
  c:\mingw\include\ncursesw\ncurses_dll.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h \

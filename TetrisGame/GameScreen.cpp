@@ -4,7 +4,9 @@
 
 #include "GameScreen.hpp"
 GameScreen::GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int _yTetraStart, int _xTetraStart) {
+    int width, height;
     this->current_screen = newwin(_nLines, _nColumns, _yStart, _xStart);
+<<<<<<< HEAD
     WINDOW* cornice = newwin(_nLines+2, _nColumns+4, _yStart-1, _xStart-2);
     for(int i=0; i< 2; i++){
         for(int j=0; j< _nColumns+4; j++){
@@ -22,6 +24,12 @@ GameScreen::GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int
     wrefresh(cornice);
     refresh();
     delwin(cornice);
+=======
+    getmaxyx(this->current_screen, height, width);
+    mvprintw(0,(width+51)/2, "[esc] quit    [space] drop   [e] save    [q] rotate");
+    keypad(this->current_screen, true);
+    nodelay(this->current_screen, true);
+>>>>>>> origin/jonas
 
     this->rows = _nLines;
     this->columns = _nColumns;
@@ -40,7 +48,7 @@ void GameScreen::clear() {
         }
     }
 }
-
+//crea un nuovo tetramino a seconda della rotazione, ogni pezo ha 4 rotazioni
 void GameScreen::pairTetramin(int _code){
     this->current_tetramin_code = _code;
     delete this->current_tetramin;
