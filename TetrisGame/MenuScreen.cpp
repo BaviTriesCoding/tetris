@@ -49,6 +49,7 @@ void MenuScreen::isActiveChoice() {
     }
 }
 void MenuScreen::renderScreen() {
+
     wclear(this->menu_window);
     wrefresh(this->menu_window);
     clear();
@@ -56,6 +57,7 @@ void MenuScreen::renderScreen() {
     delwin(this->menu_window);
     if(this->index_choice==0){
         auto game = TetrisGame(stdscr);
+
         this->result = game.play();
         writeResults();
         resultScreen();

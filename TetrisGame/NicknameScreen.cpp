@@ -40,9 +40,6 @@ void NicknameScreen::inputNickName() {
     refresh();
 }
 
-void NicknameScreen::showMenu() {
-    auto menu = MenuScreen();
-}
 void NicknameScreen::printNickName() {
     wclear(this->nickNameScreen);
     box(this->nickNameScreen,0,0);

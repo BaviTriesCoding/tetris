@@ -14,6 +14,8 @@ protected:
     bool canHold;
     int acceptedInput[17];
     int milliseconds;
+    int ticks;
+    double playedSeconds;
 public:
     TetrisGame(WINDOW* _mainScreen);
     int play();

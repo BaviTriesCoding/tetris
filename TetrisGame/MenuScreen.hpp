@@ -6,7 +6,7 @@
 #define TETRIS_MENUSCREEN_HPP
 
 
-#include <ncurses.h>
+#include "../library.h"
 #include "TetrisGame.hpp"
 
 
