@@ -4,7 +4,7 @@
 
 #ifndef TETRIS_SCORESCREEN_HPP
 #define TETRIS_SCORESCREEN_HPP
-#include <ncurses.h>
+#include "../library.h"
 #include <fstream>
 #include <cstring>
 using namespace std;
@@ -24,15 +24,12 @@ protected:
     int line;
     int list_length;
 public:
-    void move_up();
-    void move_down();
     void scambia( p_giocata , p_giocata);
     void print_list();
     p_giocata sort();
     p_giocata creaLista();
     ScoreScreen();
     void ScoreList();
-    void goToMenu();
 };
 
 

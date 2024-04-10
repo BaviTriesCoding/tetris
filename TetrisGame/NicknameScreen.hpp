@@ -5,7 +5,7 @@
 #ifndef TETRIS_NICKNAMESCREEN_HPP
 #define TETRIS_NICKNAMESCREEN_HPP
 
-#include <ncurses.h>
+#include "../library.h"
 #include <fstream>
 #include <cstring>
 using namespace std;
@@ -19,7 +19,6 @@ public:
 
     NicknameScreen();
     void inputNickName();
-    void showMenu();
     void printNickName();
     string returnNickname();
 };

@@ -46,13 +46,6 @@ ScoreScreen::ScoreScreen() {
         }
     }
 }
-void ScoreScreen::goToMenu() {
-    wclear(this->score_screen);
-    wrefresh(this->score_screen);
-    delwin(this->score_screen);
-    refresh();
-    auto menu = MenuScreen();
-}
 void ScoreScreen::scambia( p_giocata tmp, p_giocata max){
     p_giocata tmp2 = new giocata;
     tmp2->punteggio=max->punteggio;

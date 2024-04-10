@@ -30,7 +30,9 @@ TetrisGame::TetrisGame(WINDOW* _mainScreen) {
     //setta che si puo tenere un pezzo, che il gioco e partito
     this->canHold = true;
     this->gameIsOver = false;
-    this->milliseconds = 200;
+    this->milliseconds = 25;
+    this->ticks = 15;
+    this->playedSeconds = 0;
 }
 
 void TetrisGame::checkLines() {
@@ -59,7 +61,7 @@ void TetrisGame::checkLines() {
     }
     this->points = this->points + 50*clearedLines*(clearedLines + 1);
     mvprintw(0,0, "%11d", this->points);
-    if(this->milliseconds>=50){ this->milliseconds = 100 - (this->points / 1000); }
+    if(this->ticks>=5){ this->ticks = 15 - (this->points / 1000); }
 }
 //aggiorna lo schermo dei prossimi tetramini
 void TetrisGame::nextTetramin() {
@@ -208,15 +210,16 @@ bool TetrisGame::evalInput(int _input) {
 }
 
 int TetrisGame::play() {
-    int ticks = 0;
+    int gameTicks = 0;
     bool wentDown;
+    clock_t start, end;
     this->nextTetramin();
-
     while(!this->gameIsOver){
+        start = clock();
         this->evalInput(this->getSafeInput());
-        ticks++;
+        gameTicks++;
         // fa una discesa forzata se ci si mette a spammare le rotazioni
-        if(ticks==5){
+        if(gameTicks>=this->ticks){
             if(this->main->current_tetramin->canGoDirection(0)){
                 this->main->current_tetramin->goDirection(0);
                 wentDown = true;
@@ -227,8 +230,12 @@ int TetrisGame::play() {
                     this->placeTetramin();
                 }
             }
-            ticks=0;
+            gameTicks=0;
         }
+        end = clock();
+        this->playedSeconds += float(end - start) / CLOCKS_PER_SEC;
+        mvprintw(LINES-1, 0, "      ");
+        mvprintw(LINES-1, 0, "%2d: %2d",int(this->playedSeconds)/60, int(this->playedSeconds)%60);
     }
     delwin(this->main->current_screen);
     delwin(this->next[0]->current_screen);
