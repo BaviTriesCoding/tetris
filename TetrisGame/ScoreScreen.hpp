@@ -4,7 +4,7 @@
 
 #ifndef TETRIS_SCORESCREEN_HPP
 #define TETRIS_SCORESCREEN_HPP
-#include <ncurses/ncurses.h>
+#include <ncurses.h>
 #include <fstream>
 #include <cstring>
 using namespace std;

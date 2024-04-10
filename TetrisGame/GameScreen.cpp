@@ -25,7 +25,7 @@ GameScreen::GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int
     delwin(cornice);
 
     getmaxyx(this->current_screen, height, width);
-    mvprintw(0,(width+51)/2, "[esc] quit    [space] drop   [e] save    [q] rotate");
+    //mvprintw(0,(width+51)/2, "[esc] quit    [space] drop   [e] save    [q] rotate");
     keypad(this->current_screen, true);
     nodelay(this->current_screen, true);
 

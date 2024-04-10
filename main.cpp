@@ -1,6 +1,6 @@
-
-#include "library.h"
+#include "TetrisGame/TetrisGame.hpp"
 #include "TetrisGame/MenuScreen.hpp"
+#include "TetrisGame/NicknameScreen.hpp"
 int main() {
     srand(time(nullptr));
     initializeNcurses();

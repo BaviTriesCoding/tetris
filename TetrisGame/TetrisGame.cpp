@@ -75,10 +75,6 @@ void TetrisGame::nextTetramin() {
     this->next[1]->pairTetramin(this->next[2]->current_tetramin_code);
     this->next[2]->clear();
     this->next[2]->pairTetramin(semiRandom);
-
-
-    this->next[2]->pairTetramin(rand()%28);
-
 }
 
 void TetrisGame::holdTetramin() {

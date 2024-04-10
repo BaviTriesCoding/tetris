@@ -5,7 +5,7 @@
 #ifndef TETRIS_NICKNAMESCREEN_HPP
 #define TETRIS_NICKNAMESCREEN_HPP
 
-#include <ncurses/ncurses.h>
+#include <ncurses.h>
 #include <fstream>
 #include <cstring>
 using namespace std;
