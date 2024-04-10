@@ -27,7 +27,7 @@ void MenuScreen::isActiveChoice() {
     if(this->index_choice==0){
         wattron(this->menu_window,A_REVERSE);
     }
-    mvwprintw(this->menu_window, yBox/4, (xBox-7)/2, "New Game");
+    mvwprintw(this->menu_window, yBox/4, (xBox-9)/2, " New Game ");
     if(this->index_choice==0){
         wattroff(this->menu_window,A_REVERSE);
     }
@@ -36,14 +36,14 @@ void MenuScreen::isActiveChoice() {
     if(this->index_choice==1){
         wattron(this->menu_window,A_REVERSE);
     }
-    mvwprintw(this->menu_window, yBox*2/4, (xBox-10)/2, "See results");
+    mvwprintw(this->menu_window, yBox*2/4, (xBox-12)/2, " See results ");
     if(this->index_choice==1){
         wattroff(this->menu_window,A_REVERSE);
     }
     if(this->index_choice==2){
         wattron(this->menu_window,A_REVERSE);
     }
-    mvwprintw(this->menu_window, yBox*3/4, (xBox-8)/2, "quit game");
+    mvwprintw(this->menu_window, yBox*3/4, (xBox-10)/2, " Quit game ");
     if(this->index_choice==2){
         wattroff(this->menu_window,A_REVERSE);
     }
@@ -57,8 +57,8 @@ void MenuScreen::renderScreen() {
     delwin(this->menu_window);
     if(this->index_choice==0){
         auto game = TetrisGame(stdscr);
-
         this->result = game.play();
+        this->gameTime = game.returnTime();
         writeResults();
         resultScreen();
         showMenu();
@@ -69,6 +69,7 @@ void MenuScreen::renderScreen() {
         showMenu();
     }
     else if(this->index_choice==2){
+        nodelay(stdscr, true);
         delwin(this->menu_window);
         endwin();
     }
@@ -83,7 +84,7 @@ void MenuScreen::resultScreen() {
     this->result_screen = newwin(yMax/6, xMax/4, (yMax*6)/8, xMax/3);
     box(this->result_screen,0,0);
     mvwprintw(this->result_screen, 1,1,"complimenti %s!", this->nickName.c_str());
-    mvwprintw(this->result_screen, 3,1,"hai fatto %d punti!", this->result);
+    mvwprintw(this->result_screen, 3,1,"hai fatto %d punti!", this->result, (int)this->gameTime/60, (int)this->gameTime%60);
     wrefresh(this->result_screen);
 }
 
@@ -118,7 +119,7 @@ void MenuScreen::showMenu() {
 void MenuScreen::writeResults() {
     ofstream outputFile; /* Dichiarazione di tipo */
     outputFile.open("score.txt",ios::app); /* Apertura del file */
-    outputFile << this->nickName+","+ to_string(this->result)+"!"+"2:45"<< '\n';
+    outputFile << this->nickName+","+ to_string(this->result)+"!"+ to_string((int)this->gameTime/60)+((int)this->gameTime%60<10?":0":":")+to_string((int)this->gameTime%60)<< '\n';
     outputFile.close();
 }
 

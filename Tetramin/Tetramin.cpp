@@ -47,6 +47,8 @@ void Tetramin::show() {
             mvwaddch(this->screen, this->shadowBlocks[i].y, this->shadowBlocks[i].x * 2, ('[' | this->shadowColor));
             mvwaddch(this->screen, this->shadowBlocks[i].y, this->shadowBlocks[i].x * 2 + 1, (']' | this->shadowColor));
         }
+    }
+    for(int i = 0;i<4; i++){
         if(this->blocks[i].y >=0 && this->blocks[i].y <=19 && this->blocks[i].x >=0 && this->blocks[i].x <=9){
             mvwaddch(this->screen, this->blocks[i].y, this->blocks[i].x * 2, ('[' | this->color | A_REVERSE));
             mvwaddch(this->screen, this->blocks[i].y, this->blocks[i].x * 2 + 1, (']' | this->color | A_REVERSE));
@@ -61,6 +63,8 @@ void Tetramin::clear() {
         if(this->blocks[i].y >=0 && this->blocks[i].y <=19 && this->blocks[i].x >=0 && this->blocks[i].x <=9){
             mvwprintw(this->screen, this->blocks[i].y, this->blocks[i].x * 2, "  ");
         }
+    }
+    for(int i = 0; i<4;i++){
         if(this->shadowsAllowed && this->shadowBlocks[i].y >=0 && this->shadowBlocks[i].y <=19 && this->shadowBlocks[i].x >=0 && this->shadowBlocks[i].x <=9){
             mvwprintw(this->screen, this->shadowBlocks[i].y, this->shadowBlocks[i].x * 2, "  ");
         }

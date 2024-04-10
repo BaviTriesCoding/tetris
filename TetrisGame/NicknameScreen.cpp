@@ -10,7 +10,7 @@ NicknameScreen::NicknameScreen() {
     clear();
     refresh();
     getmaxyx(stdscr, yMax, xMax);
-    this->nickNameScreen = newwin(yMax/2, xMax/4, yMax/4, xMax/3);
+    this->nickNameScreen = newwin(yMax/2, xMax/4, yMax/2-yMax/4, xMax/2-xMax/8);
 
     keypad(this->nickNameScreen, TRUE);
     printNickName();
@@ -28,7 +28,7 @@ void NicknameScreen::inputNickName() {
                 this->nickName = this->nickName.substr(0, this->nickName.length()-1);
                 break;
             default:
-                if(nickName.length()<25) {
+                if(nickName.length()<16) {
                     this->nickName += tmp[0];
                 }
                 break;
@@ -41,15 +41,17 @@ void NicknameScreen::inputNickName() {
 }
 
 void NicknameScreen::printNickName() {
+    int xMax, yMax;
+    getmaxyx(this->nickNameScreen, yMax, xMax);
     wclear(this->nickNameScreen);
     box(this->nickNameScreen,0,0);
-    mvwprintw(this->nickNameScreen, 5,2,"inserisci il nickname:");
-    mvwprintw(this->nickNameScreen, 7,2,"--------------------------");
-    mvwprintw(this->nickNameScreen, 8,2,"|%s",this->nickName.c_str());
-    mvwprintw(this->nickNameScreen, 8,27,"|");
-    mvwprintw(this->nickNameScreen, 9,2,"--------------------------");
-    mvwprintw(this->nickNameScreen, 2, 2, "Benvenuto!");
-    mvwprintw(this->nickNameScreen, 12, 2, "premi invio giocare!");
+    mvwprintw(this->nickNameScreen, 5,(xMax-22)/2,"inserisci il nickname:");
+    mvwprintw(this->nickNameScreen, 7,(xMax-17)/2,"-----------------");
+    mvwprintw(this->nickNameScreen, 8,(xMax-17)/2,"|%s",this->nickName.c_str());
+    mvwprintw(this->nickNameScreen, 8,(xMax-17)/2+16,"|");
+    mvwprintw(this->nickNameScreen, 9,(xMax-17)/2,"-----------------");
+    mvwprintw(this->nickNameScreen, 2, (xMax-10)/2, "BENVENUTO!");
+    mvwprintw(this->nickNameScreen, 12, (xMax-24)/2, "premi invio per giocare!");
     wrefresh(this->nickNameScreen);
 }
 

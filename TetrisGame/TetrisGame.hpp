@@ -10,6 +10,7 @@ class TetrisGame {
 protected:
     int points;
     GameScreen *main, *hold, *next[3];
+    WINDOW *time;
     bool gameIsOver;
     bool canHold;
     int acceptedInput[17];
@@ -25,6 +26,7 @@ public:
     void placeTetramin();
     int getSafeInput();
     bool evalInput(int _input);
+    double returnTime();
 };
 
 

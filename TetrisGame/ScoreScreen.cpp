@@ -22,14 +22,14 @@ ScoreScreen::ScoreScreen() {
             case KEY_DOWN:
                 if(this->line+(height-9)/2<this->list_length){
                     this->line+=1;
-                    this->scroll_index+=((height-9)/(this->list_length*2-height));
+                    this->scroll_index+=((float)((height-9)*2)/(float)((this->list_length*2)-(height-9)));
                     print_list();
                 }
                 break;
             case KEY_UP:
                 if(this->line>0){
                     this->line-=1;
-                    this->scroll_index-=((height-9)/(this->list_length*2-height));
+                    this->scroll_index-=((float)((height-9)*2)/(float)((this->list_length*2)-(height-9)));
                     print_list();
                 }
                 break;
@@ -125,12 +125,12 @@ void ScoreScreen::print_list() {
     mvprintw(2, (width - 63) / 2, "[esc] quit     [arrow_up] scroll up    [arrow_down] scroll down");
     mvprintw(4, (width - 7) / 2, "Results");
     mvprintw(5,(width-64)/2, "----------------------------------------------------------------");
-    mvprintw(this->scroll_index,width/2+32,"|");
+    mvprintw((int)this->scroll_index,width/2+32,"|");
     while(head != nullptr){
         if(count_line >= this->line){
             mvwprintw(this->score_screen,i, (width-30)/3,"nome: %s",head->nome.c_str());
-            mvwprintw(this->score_screen,i, (width-30)/3+head->nome.length()+15,"punteggio: %d",head->punteggio);
-            mvwprintw(this->score_screen,i, (width-30)/3+ to_string(head->punteggio).length()+40,"tempo: %s",head->tempo.c_str());
+            mvwprintw(this->score_screen,i, (width-30)/3+23,"punteggio: %d",head->punteggio);
+            mvwprintw(this->score_screen,i, (width-30)/3+48,"tempo: %s",head->tempo.c_str());
             i+=2;
         }
         head=head->next;

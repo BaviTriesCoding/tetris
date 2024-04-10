@@ -18,6 +18,7 @@ protected:
     WINDOW *result_screen;
     string nickName;
     int result;
+    double gameTime;
 public:
     MenuScreen();
     void isActiveChoice();

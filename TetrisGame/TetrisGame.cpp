@@ -14,25 +14,30 @@ TetrisGame::TetrisGame(WINDOW* _mainScreen) {
         this->acceptedInput[i] = acIn[i];
     }
     int rows = getmaxy(_mainScreen), cols = getmaxx(_mainScreen);
-    this->points = 0;
-
-    this->main = new GameScreen( 20, 20, rows/2 - 10, cols/2 - 10, -2, 5);
-    this->hold = new GameScreen(6, 12, rows/2 - 10, cols/2 - 24, 1, 2);
-
-    for(int i=0; i<3; i++){
-        this->next[i] = new GameScreen(6, 12, rows/2 - 10 + 6*i, cols/2 + 12, 1, 3);
-        this->next[i]->pairTetramin(rand()%28);
-    }
-
-    this->hold = new GameScreen(6, 12, rows/2 - 10, cols/2 - 24, 1, 3);
-    this->main = new GameScreen( 20, 20, rows/2 - 10, cols/2 - 10, -2, 5);
-
-    //setta che si puo tenere un pezzo, che il gioco e partito
     this->canHold = true;
     this->gameIsOver = false;
     this->milliseconds = 25;
     this->ticks = 15;
     this->playedSeconds = 0;
+    this->points = 0;
+
+    this->main = new GameScreen( 20, 20, rows/2 - 12, cols/2 - 10, -2, 5);
+    this->hold = new GameScreen(6, 12, rows/2 - 12, cols/2 - 24, 1, 2);
+
+    for(int i=0; i<3; i++){
+        this->next[i] = new GameScreen(6, 12, rows/2 - 12 + 6*i, cols/2 + 12, 1, 3);
+        this->next[i]->pairTetramin(rand()%28);
+    }
+
+    this->hold = new GameScreen(6, 12, rows/2 - 12, cols/2 - 24, 1, 3);
+    this->main = new GameScreen( 20, 20, rows/2 - 12, cols/2 - 10, -2, 5);
+    this->time = newwin(6,24,(rows/2)+9,(cols/2)-12);
+    box(this->time, 0,0);
+    refresh();
+    mvwprintw(this->time, 1,1,"punteggio: %d",this->points);
+    mvwprintw(this->time, 3,1,"tempo: %d",this->playedSeconds);
+    wrefresh(this->time);
+    //setta che si puo tenere un pezzo, che il gioco e partito
 }
 
 void TetrisGame::checkLines() {
@@ -60,7 +65,7 @@ void TetrisGame::checkLines() {
         }
     }
     this->points = this->points + 50*clearedLines*(clearedLines + 1);
-    mvprintw(0,0, "%11d", this->points);
+    mvwprintw(this->time, 1,1,"punteggio: %11d",this->points);
     if(this->ticks>=5){ this->ticks = 15 - (this->points / 1000); }
 }
 //aggiorna lo schermo dei prossimi tetramini
@@ -209,6 +214,9 @@ bool TetrisGame::evalInput(int _input) {
     return madeAMove;
 }
 
+double TetrisGame::returnTime() {
+    return this->playedSeconds;
+}
 int TetrisGame::play() {
     int gameTicks = 0;
     bool wentDown;
@@ -234,8 +242,9 @@ int TetrisGame::play() {
         }
         end = clock();
         this->playedSeconds += float(end - start) / CLOCKS_PER_SEC;
-        mvprintw(LINES-1, 0, "      ");
-        mvprintw(LINES-1, 0, "%2d: %2d",int(this->playedSeconds)/60, int(this->playedSeconds)%60);
+        mvwprintw(this->time, 3,1,"tempo: %2d%s%d",int(this->playedSeconds)/60,(int(this->playedSeconds)%60<10?":0":":") ,int(this->playedSeconds)%60);
+        wrefresh(this->time);
+
     }
     delwin(this->main->current_screen);
     delwin(this->next[0]->current_screen);
