@@ -83,7 +83,7 @@ void MenuScreen::resultScreen() {
     refresh();
     this->index_choice=0;
     getmaxyx(stdscr, yMax, xMax);
-    this->result_screen = newwin(yMax/6, xMax/4, (yMax*6)/8, xMax/3);
+    this->result_screen = newwin(yMax/6, xMax/4, yMax - yMax/4, xMax/2 - xMax/8);
     box(this->result_screen,0,0);
     mvwprintw(this->result_screen, 1,1,"complimenti %s!", this->nickName.c_str());
     mvwprintw(this->result_screen, 3,1,"hai fatto %d punti!", this->result, (int)this->gameTime/60, (int)this->gameTime%60);
