@@ -10,7 +10,7 @@ ScoreScreen::ScoreScreen() {
     this->line=0;
     this->list_length=0;
     this->scroll_index = 7;
-    int i = 2, height, width;
+    int height, width;
     getmaxyx(stdscr, height, width);
     this->score_screen = newwin(height - 2, width - 2, 1, 1);
     keypad(this->score_screen, true);

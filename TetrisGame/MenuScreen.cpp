@@ -70,6 +70,8 @@ void MenuScreen::renderScreen() {
     }
     else if(this->index_choice==2){
         nodelay(stdscr, true);
+        echo();
+        clear();
         delwin(this->menu_window);
         endwin();
     }
@@ -92,7 +94,7 @@ void MenuScreen::showMenu() {
     this->isActive=true;
     int xMax, yMax;
     getmaxyx(stdscr, yMax, xMax);
-    this->menu_window = newwin(yMax/2, xMax/4, yMax/4, xMax/3);
+    this->menu_window = newwin(yMax/2, xMax/4, yMax/2 - yMax/4, xMax/2 - xMax/8);
     keypad(this->menu_window, true);
     box(this->menu_window, 0, 0);
     isActiveChoice();
