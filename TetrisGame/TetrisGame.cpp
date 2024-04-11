@@ -1,6 +1,20 @@
 //
 // Created by riccardo on 08/03/24.
 //
+/////////////////////////////////////////////////////////////////
+//
+//   in questo file ci sono tutte le funzioni relative alla
+//   gestione dell'andamento del gioco e degli input dati dall'
+// .utente.
+//
+//
+//
+//
+//
+//
+//
+//
+//////////////////////////////////////////////////////////
 #include "TetrisGame.hpp"
 TetrisGame::TetrisGame(WINDOW* _mainScreen) {
     //input accettabili
@@ -20,7 +34,7 @@ TetrisGame::TetrisGame(WINDOW* _mainScreen) {
     this->ticks = 15;
     this->playedSeconds = 0;
     this->points = 0;
-
+    //creazione di tutti gli schermi di gioco
     this->main = new GameScreen( 20, 20, rows/2 - 12, cols/2 - 10, -2, 5);
     this->hold = new GameScreen(6, 12, rows/2 - 12, cols/2 - 24, 1, 2);
 
@@ -40,6 +54,7 @@ TetrisGame::TetrisGame(WINDOW* _mainScreen) {
     //setta che si puo tenere un pezzo, che il gioco e partito
 }
 
+//funzione di controllo completamento linee
 void TetrisGame::checkLines() {
     int checkLine = 19, checkRow, clearedLines = 0;
     chtype moveChars;
@@ -55,6 +70,7 @@ void TetrisGame::checkLines() {
             clearedLines++;
             //trasla tutte le linee di una sotto
             for (int i = checkLine; i > 0; i--) {
+                //sposta la singola line in quella sotto
                 for (int j = 0; j < 20; j++) {
                     moveChars = mvwinch(this->main->current_screen, i-1, j);
                     mvwaddch(this->main->current_screen, i, j,moveChars);
@@ -64,14 +80,16 @@ void TetrisGame::checkLines() {
             checkLine--;
         }
     }
-    this->points = this->points + 50*clearedLines*(clearedLines + 1);
+    this->points = this->points + 50*clearedLines*(clearedLines + 1);//aggiornamento dei punti
     mvwprintw(this->time, 1,1,"punteggio: %11d",this->points);
     if(this->ticks>=5){ this->ticks = 15 - (this->points / 1000); }
 }
+
 //aggiorna lo schermo dei prossimi tetramini
 void TetrisGame::nextTetramin() {
     int semiRandom = rand()%28;
-    while(semiRandom/4 == this->next[1]->current_tetramin_code/4 || semiRandom/4 == this->next[2]->current_tetramin_code/4){
+    //controllo che non generi tetramini tutti uguali nello schermo next
+    while(semiRandom/4 == this->next[1]->current_tetramin_code/4 && semiRandom/4 == this->next[2]->current_tetramin_code/4){
         semiRandom = rand()%28;
     }
     this->main->pairTetramin(this->next[0]->current_tetramin_code);
@@ -84,7 +102,10 @@ void TetrisGame::nextTetramin() {
     this->next[2]->pairTetramin(semiRandom);
 }
 
+
+//funzione che gestisce il tetramino salvato
 void TetrisGame::holdTetramin() {
+    //controllo che posso fare lo scambio
     if(this->canHold){
         //nel caso ci fosse un pezzo lo scambia
         if (this->hold->current_tetramin_code != -1) {
@@ -104,6 +125,8 @@ void TetrisGame::holdTetramin() {
     }
 }
 
+
+//place tetramin piazza il tetramino nella posizione finale
 void TetrisGame::placeTetramin() {
     //nel caso il giooc fosse appena iniziato e non ci sono tetramini in discesa
     if(this->main->current_tetramin_code!=-1){
@@ -121,9 +144,10 @@ void TetrisGame::placeTetramin() {
         }
     }
     this->canHold = true;
-    this->checkLines();
-    this->nextTetramin();
+    this->checkLines();//controllo se la linea è al completo
+    this->nextTetramin();//avvio un nuovo tetramino
 }
+
 //questa funzione controlla se ogni input inserito in un raggio di n millisecondi è valdio e restituisce l'ultimo valido
 int TetrisGame::getSafeInput(){
     clock_t start, end;
@@ -214,14 +238,19 @@ bool TetrisGame::evalInput(int _input) {
     return madeAMove;
 }
 
+//restituisce il tempo di gioco
 double TetrisGame::returnTime() {
     return this->playedSeconds;
 }
+
+//gestisce tutti gli eventi durante il gioco
 int TetrisGame::play() {
     int gameTicks = 0;
     bool wentDown;
     clock_t start, end;
     this->nextTetramin();
+
+    //ciclo di gioco
     while(!this->gameIsOver){
         start = clock();
         this->evalInput(this->getSafeInput());
@@ -246,6 +275,7 @@ int TetrisGame::play() {
         wrefresh(this->time);
 
     }
+    //pulizia di tutti gli schermi una volta finita la partita
     delwin(this->main->current_screen);
     delwin(this->next[0]->current_screen);
     delwin(this->next[1]->current_screen);

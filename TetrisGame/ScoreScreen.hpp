@@ -26,10 +26,11 @@ protected:
 public:
     void scambia( p_giocata , p_giocata);
     void print_list();
-    p_giocata sort();
+    p_giocata selectionSort();
     p_giocata creaLista();
     ScoreScreen();
     void ScoreList();
+    void manageInput();
 };
 
 

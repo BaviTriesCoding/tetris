@@ -3,29 +3,41 @@
 //
 
 #include "GameScreen.hpp"
+/////////////////////////////////////////////////////////////////
+//
+// in questo file ci sono i metodi che gesticono il comportamento
+// degli schermi e dei tetramini al loro interno.
+//
+//
+//
+//
+//
+//
+//
+//
+//////////////////////////////////////////////////////////
+
+//inzializzazione della classe
 GameScreen::GameScreen(int _nLines, int _nColumns, int _yStart, int _xStart, int _yTetraStart, int _xTetraStart) {
-    int width, height;
+    int heigth, width;
     this->current_screen = newwin(_nLines, _nColumns, _yStart, _xStart);
-    WINDOW* cornice = newwin(_nLines+2, _nColumns+4, _yStart-1, _xStart-2);
+    //creazione cornice
     for(int i=0; i< 2; i++){
+        //laterale
         for(int j=0; j< _nColumns+4; j++){
             init_pair(15, 15, 15);
             mvwaddch(stdscr, i * (_nLines + 1) + _yStart - 1, j + _xStart - 2, '#' | COLOR_PAIR(15));
         }
-    }
-    for(int i=0; i< 2; i++){
+        //sopra
         for(int j=0; j< _nLines+2; j++){
             init_pair(15, 15, 15);
             mvwaddch(stdscr, j + _yStart - 1, i * (_nColumns + 2)+ _xStart - 2, '#' | COLOR_PAIR(15));
             mvwaddch(stdscr, j + _yStart - 1, i * (_nColumns + 2) + _xStart - 1, '#' | COLOR_PAIR(15));
         }
     }
-    wrefresh(cornice);
-    refresh();
-    delwin(cornice);
 
-    getmaxyx(this->current_screen, height, width);
-    //mvprintw(0,(width+51)/2, "[esc] quit    [space] drop   [e] save    [q] rotate");
+    refresh();
+    getmaxyx(this->current_screen, heigth, width);
     keypad(this->current_screen, true);
     nodelay(this->current_screen, true);
 

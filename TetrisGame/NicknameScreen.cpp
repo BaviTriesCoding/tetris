@@ -1,9 +1,18 @@
 //
 // Created by jonas on 04/04/2024.
 //
-#include <cstring>
+
 #include "NicknameScreen.hpp"
-#include "MenuScreen.hpp"
+/////////////////////////////////////////////////////////////////
+// in questo file sono presenti tutte le funzioni relative
+// all'inserimento del nickname
+//
+//
+//
+//
+////////////////////////////////////////////////////////////////
+
+//inzializzazione della classe nickname
 NicknameScreen::NicknameScreen() {
     this->isActive=true;
     int xMax, yMax;
@@ -17,23 +26,26 @@ NicknameScreen::NicknameScreen() {
     inputNickName();
 }
 
+
+//funzione che gestise gli input da tastiera
 void NicknameScreen::inputNickName() {
     while(isActive){
-        char tmp[0];
+        char tmp[0];//contiene il carattere dato in input
         switch (tmp[0]=wgetch(this->nickNameScreen)) {
             case 10:
                 this->isActive=false;
                 break;
-            case 8:
+            case 8://detecta il delete e elemina l'ultimo carattere della stringa
                 this->nickName = this->nickName.substr(0, this->nickName.length()-1);
                 break;
-            default:
+            default://di default aggiunge il carrattere dato in input
+                //controlla che la stringa non si più lunga di 16 caratteri
                 if(nickName.length()<16) {
                     this->nickName += tmp[0];
                 }
                 break;
         }
-        printNickName();
+        printNickName();//aggiorna il nome visibile
     }
     delwin(this->nickNameScreen);
     clear();
@@ -55,6 +67,7 @@ void NicknameScreen::printNickName() {
     wrefresh(this->nickNameScreen);
 }
 
+//quando è invocata ritorna il nickaname
 string NicknameScreen::returnNickname() {
     return this->nickName;
 }

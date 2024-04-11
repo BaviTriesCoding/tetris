@@ -13,7 +13,6 @@ void initializeNcurses(){
     initscr();
     if(has_colors()){
         start_color();
-        //use_default_colors();
     }
     noecho();
     cbreak();
