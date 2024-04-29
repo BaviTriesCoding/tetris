@@ -28,17 +28,22 @@ Tetramin::Tetramin(WINDOW* _screen, short _rotation, short _color) {
     init_pair(_color + 100, _color, 0);
     this->shadowColor = COLOR_PAIR(_color + 100);
     this->shadowsAllowed = false;
+    const int stageAdd[8][5][2] = {
+        {/* 0>>3 */{0, 0}, {0, 1},  {-1, 1},  {2,  0}, {2,  1}},
+        {/* 0>>1 */{0, 0}, {0, -1}, {-1, -1}, {2,  0}, {2,  -1}},
+        {/* 1>>0 */{0, 0}, {0, 1},  {1,  1},  {-2, 0}, {-2, 1}},
+        {/* 1>>2 */{0, 0}, {0, 1},  {1,  1},  {-2, 0}, {-2, 1}},
+        {/* 2>>1 */{0, 0}, {0, -1}, {-1, -1}, {2,  0}, {2,  -1}},
+        {/* 2>>3 */{0, 0}, {0, 1},  {-1, 1},  {2,  0}, {2,  1}},
+        {/* 3>>2 */{0, 0}, {0, -1}, {1,  -1}, {-2, 0}, {-2, -1}},
+        {/* 3>>0 */{0, 0}, {0, -1}, {1,  -1}, {-2, 0}, {-2, -1}}};
 
     //creazione matrice che gestisce il super rotation system
     for(int n = 0; n<8; n++){
         for(int _testNumber = 0; _testNumber < 5; _testNumber++){
             for(int x = 0; x<2; x++){
                 //quanto deve essere aggiunto ad ogni stage per arrivare alla posizione di controllo
-                int stageAdd[5][2] = {{0, 0}, {0, 1},  {-1, 1},  {2,  0}, {2,  1}};
-                int segnoY = 2 * abs(int(ceil(float(n * (-0.5)) + 1)) % 2) - 1;
-                int segnoX = 2 * abs(int(ceil(float((n - 2) * (-0.75)) + 1)) % 2) - 1;
-                int a = stageAdd[_testNumber][x];
-                this->stageRotation[n][_testNumber][x] =  (x==1 ? a * segnoX : a * segnoY);
+                this->stageRotation[n][_testNumber][x] =  stageAdd[n][_testNumber][x];
             }
         }
     }
