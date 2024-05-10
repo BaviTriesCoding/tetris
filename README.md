@@ -19,7 +19,7 @@ pincopallino.cpp
 ```
 ## Installazione ed esecuzione
 Di seguito la procedura per compilare ed instalalre l'app:
-<code>
+
 1. risorse minime:
 2. configurazione variabili di ambiente:
 3. spiegazione comando x 
@@ -27,13 +27,13 @@ Di seguito la procedura per compilare ed instalalre l'app:
 command pinco
 command pallino
 ``` 
+
 4. comando y
 ```c++
 command pinco
 command pallino
 ``` 
-</code>
 
 ## Comandi per giocare
 
-....
+I comandi del gioco sono:
