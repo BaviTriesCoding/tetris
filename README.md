@@ -2,7 +2,8 @@
 ![Gioco del testris sviluppato in C++](./docs/media/top-banner.png)
 
 ## Descrizione
-Progetto all'interno del laboratorio di programmazione.... Il programma simula il gioco del tetris 
+Progetto svolto come parte della prova finale del corso di programmazione al primo anno di scienze informatiche 
+presso l'UNIBO.
 
 ## Licenza
 Proprietà intellettuale di Jonas Micocci, Riccardo Baviera e Andrea Astolfi , licenza del codice AGPL come riportato in [LICENCE.TXT](LICENCE).
@@ -23,17 +24,7 @@ Di seguito la procedura per compilare ed instalalre l'app:
 
 1. risorse minime:
 2. configurazione variabili di ambiente:
-3. spiegazione comando x 
-```c++
-command pinco
-command pallino
-``` 
-
-4. comando y
-```c++
-command pinco
-command pallino
-``` 
+seguire le istruzione al file [istruzioni_installazione](./docs/files/documentazione.pdf)
 
 ## Comandi per giocare
 
