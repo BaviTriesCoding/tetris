@@ -1,12 +1,12 @@
 # App Tetris
-![Gioco del testris sviluppato in C++](./LICENSE)
+![Gioco del testris sviluppato in C++](./docs/media/top-banner.png)
 
 ## Descrizione
 Progetto svolto come parte della prova finale del corso di programmazione al primo anno di scienze informatiche 
 presso l'UNIBO.
 
 ## Licenza
-Proprietà intellettuale di Jonas Micocci, Riccardo Baviera e Andrea Astolfi , licenza del codice AGPL come riportato in [LICENCE.TXT](LICENCE).
+Proprietà intellettuale di Jonas Micocci, Riccardo Baviera e Andrea Astolfi , licenza del codice AGPL come riportato in [LICENCE.TXT](./LICENSE).
 
 ## Autori
 Lista degli autori e cv riportati nel file [AUTORI.TXT](AUTORI)
