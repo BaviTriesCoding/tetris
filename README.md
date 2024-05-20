@@ -5,7 +5,7 @@
 Progetto all'interno del laboratorio di programmazione.... Il programma simula il gioco del tetris 
 
 ## Licenza
-Proprietà intellettuale di Bavi e Jonny , licenza del codice AGPL come riportato in [LICENCE.TXT](LICENCE).
+Proprietà intellettuale di Jonas Micocci, Riccardo Baviera e Andrea Astolfi , licenza del codice AGPL come riportato in [LICENCE.TXT](LICENCE).
 
 ## Autori
 Lista degli autori e cv riportati nel file [AUTORI.TXT](AUTORI)
@@ -14,8 +14,9 @@ Lista degli autori e cv riportati nel file [AUTORI.TXT](AUTORI)
 Per lo sviluppo dell'app sono è stato utilizzato il compilatore C++ e le seguenti librerie:
 
 ```c++
-pincopallo.cpp
-pincopallino.cpp
+#include <ncurses.h>
+#include <ctime>
+#include <cstring>
 ```
 ## Installazione ed esecuzione
 Di seguito la procedura per compilare ed instalalre l'app:
