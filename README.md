@@ -1,5 +1,5 @@
 # App Tetris
-[Gioco del testris sviluppato in C++](./docs/media/1.jpg) [Gioco del testris sviluppato in C++](./docs/media/2.jpg)
+![Gioco del testris sviluppato in C++](./docs/media/1.jpg) ![Gioco del testris sviluppato in C++](./docs/media/2.jpg)
 ## Descrizione
 Progetto svolto come parte della prova finale del corso di programmazione al primo anno di scienze informatiche 
 presso l'UNIBO.
