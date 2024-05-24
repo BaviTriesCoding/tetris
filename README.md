@@ -1,7 +1,7 @@
 # App Tetris
 <div style='display:flex; flex-diretion:row; justify-content:center;'>
-      <img src="./docs/media/1.jpg" style='width: 48%; margin:0;'>
-      <img src="./docs/media/2.jpg" style='width: 48%; margin:0;'>
+      <img src="./docs/media/1.jpg" style='width: 49%;'>
+      <img src="./docs/media/2.jpg" style='width: 49%;'>
 </div>
 ![Gioco del testris sviluppato in C++](./docs/media/1.jpg) ![Gioco del testris sviluppato in C++](./docs/media/2.jpg)
 ## Descrizione
