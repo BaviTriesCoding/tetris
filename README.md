@@ -1,6 +1,6 @@
 # App Tetris
-![Gioco del testris sviluppato in C++](./docs/media/top-banner.png)
-
+![Gioco del testris sviluppato in C++](./docs/media/1.jpg)
+![Gioco del testris sviluppato in C++](./docs/media/2.jpg)
 ## Descrizione
 Progetto svolto come parte della prova finale del corso di programmazione al primo anno di scienze informatiche 
 presso l'UNIBO.
@@ -20,10 +20,9 @@ Per lo sviluppo dell'app sono è stato utilizzato il compilatore C++ e le seguen
 #include <cstring>
 ```
 ## Installazione ed esecuzione
-Di seguito la procedura per compilare ed instalalre l'app:
+Di seguito la procedura per compilare ed installare l'app:
 
-1. risorse minime:
-2. configurazione variabili di ambiente:
+1. configurazione variabili di ambiente:
 seguire le istruzione al file [istruzioni_installazione](./docs/files/documentazione.pdf)
 
 ## Comandi per giocare
