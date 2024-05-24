@@ -3,7 +3,7 @@
       <img src="./docs/media/1.jpg" style='width: 49%;'>
       <img src="./docs/media/2.jpg" style='width: 49%;'>
 </div>
-![Gioco del testris sviluppato in C++](./docs/media/1.jpg) ![Gioco del testris sviluppato in C++](./docs/media/2.jpg)
+
 ## Descrizione
 Progetto svolto come parte della prova finale del corso di programmazione al primo anno di scienze informatiche 
 presso l'UNIBO.
