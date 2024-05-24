@@ -1,4 +1,8 @@
 # App Tetris
+<p align="center">
+      <img src="./docs/media/1.jpg" align="left">
+      <img src="./docs/media/2.jpg">
+</p>
 ![Gioco del testris sviluppato in C++](./docs/media/1.jpg) ![Gioco del testris sviluppato in C++](./docs/media/2.jpg)
 ## Descrizione
 Progetto svolto come parte della prova finale del corso di programmazione al primo anno di scienze informatiche 
