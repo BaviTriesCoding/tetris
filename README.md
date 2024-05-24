@@ -18,6 +18,7 @@ Per lo sviluppo dell'app sono è stato utilizzato il compilatore C++ e le seguen
 #include <ncurses.h>
 #include <ctime>
 #include <cstring>
+#include <fstream>
 ```
 ## Installazione ed esecuzione
 Di seguito la procedura per compilare ed installare l'app:
