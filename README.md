@@ -29,3 +29,12 @@ seguire le istruzione al file [istruzioni_installazione](./docs/files/documentaz
 ## Comandi per giocare
 
 I comandi del gioco sono:
+```
+move left: left-arrow or a-key
+move rigth: right-arrow or d-key
+move down: down-arrow or s-key
+hard drop: space
+hold piece: e-key
+rotatate clockwise: arrow-up or w-key
+rotate anti-clockwise: q-key
+```
